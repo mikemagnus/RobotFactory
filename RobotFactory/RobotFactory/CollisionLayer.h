@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 
 @class GameObject;
+@class Robot;
 
 @interface CollisionLayer : CCLayer 
 {
@@ -26,5 +27,5 @@
 -(void)spawnRobot;
 
 -(void)update:(ccTime)dt;
-
+-(CCArray*)collisionsForRobot:(Robot*)robot;
 @end

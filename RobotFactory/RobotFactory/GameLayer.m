@@ -33,20 +33,26 @@
        _topLayer = [[CollisionLayer alloc] init];
        _topLayer.position = ccp(0.0f,winSize.height / 2);
        
+       _bottomLayer = [[CollisionLayer alloc] init];
+       _bottomLayer.position = ccp(0.0f,-(winSize.height / 2));
+       _bottomLayer.rotation = 180.0f;
+       
        CCSprite* background = [CCSprite spriteWithFile:@"Background.png"];
        background.position = ccp(winSize.width / 2, winSize.height/2);
        
        GameObject* base = [GameObject spriteWithFile:@"Belt.png"];
+       base.scaleY = 0.5f;
        
        base.position = ccp(winSize.width / 2, winSize.height / 2);
 
        base.collisionRect = [base boundingBox];
        
-       [_topLayer addGameObjectToCollision:base];
+//       [_topLayer addGameObjectToCollision:base];
        
        [self addChild:background z:Z_BACKGROUND];
        [self addChild:base z:Z_MIDDLE];
        [self addChild:_topLayer z:Z_COLLISION];
+       [self addChild:_bottomLayer z:Z_COLLISION];
        
        [self scheduleUpdate];
     }
@@ -61,11 +67,13 @@
 -(void)update:(ccTime)dt
 {
    [_topLayer update:dt];
+   [_bottomLayer update:dt];
 }
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
    [_topLayer spawnRobot];
+   [_bottomLayer spawnRobot];
     return YES;
 }
 
