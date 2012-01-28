@@ -125,6 +125,7 @@
 		27FF95ED14D3D68D0011C187 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95EC14D3D68D0011C187 /* GameLayer.m */; };
 		27FF95F014D3D8350011C187 /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95EF14D3D8350011C187 /* Robot.m */; };
 		27FF95F314D3D89A0011C187 /* Obstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95F214D3D89A0011C187 /* Obstacle.m */; };
+		50CDDFDA14D3EA4B00EC3613 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -369,6 +370,8 @@
 		27FF95EF14D3D8350011C187 /* Robot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Robot.m; sourceTree = "<group>"; };
 		27FF95F114D3D89A0011C187 /* Obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
 		27FF95F214D3D89A0011C187 /* Obstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacle.m; sourceTree = "<group>"; };
+		50CDDFD814D3EA4B00EC3613 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
+		50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,6 +436,8 @@
 				27FF95D514D3D3620011C187 /* RootViewController.m */,
 				27FF95D714D3D3620011C187 /* HelloWorldLayer.h */,
 				27FF95D814D3D3620011C187 /* HelloWorldLayer.m */,
+				50CDDFD814D3EA4B00EC3613 /* MainMenuScene.h */,
+				50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */,
 				27FF95DA14D3D3620011C187 /* GameConfig.h */,
 				27FF948014D3D35C0011C187 /* Resources */,
 				27FF949414D3D35D0011C187 /* libs */,
@@ -959,6 +964,7 @@
 				27FF95ED14D3D68D0011C187 /* GameLayer.m in Sources */,
 				27FF95F014D3D8350011C187 /* Robot.m in Sources */,
 				27FF95F314D3D89A0011C187 /* Obstacle.m in Sources */,
+				50CDDFDA14D3EA4B00EC3613 /* MainMenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
