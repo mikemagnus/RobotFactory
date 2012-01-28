@@ -10,16 +10,24 @@
 #import "cocos2d.h"
 #import "GameObject.h"
 
+typedef enum RobotColor
+{
+    kRobotColorBlue,
+    kRobotColorRed
+}eRobotColor;
+
+
 @interface Robot : GameObject 
 {
-   CGPoint _velocity;
+    CGPoint _velocity;
    
-   GameObject* _collision;
+    GameObject* _collision;
+    
+    eRobotColor _color;
 }
 
 @property(nonatomic)CGPoint velocity;
 @property(nonatomic)GameObject* collision;
-
 
 -(void)update:(ccTime)dt;
 

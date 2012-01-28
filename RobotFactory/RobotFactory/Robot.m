@@ -14,7 +14,7 @@
 @synthesize velocity = _velocity;
 @synthesize collision = _collision;
 
-- (id)init 
+- (id)init
 {
    if ( (self = [super init]) ) 
    {

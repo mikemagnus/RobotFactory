@@ -34,6 +34,7 @@
         }
         
         CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.1f];
+        //[[CCAnimationCache sharedAnimationCache] 
         CGSize winSize = [CCDirector sharedDirector].winSize;
         self.rob = [CCSprite spriteWithSpriteFrameName:@"RoboBlueSmall_00000.png"];
         _rob.position = ccp(winSize.width/2, winSize.height/2);
