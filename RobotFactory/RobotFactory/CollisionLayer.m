@@ -27,7 +27,7 @@
       _spawnPoint = ccp(winSize.width - 80,300);
       
       GameObject* conveyorBelt = [GameObject node];
-      conveyorBelt.collisionRect = CGRectMake(0.0f, 30.0f, 1024, 30);
+      conveyorBelt.collisionRect = CGRectMake(0.0f, -37.0f, 1024, 50.0f);
       conveyorBelt.type = kGamePlatform;
       [_staticObjects addObject:conveyorBelt];
    }
@@ -82,7 +82,7 @@
             else
             {
                rob.velocity = ccp(rob.velocity.x + 40.0f, 0.0f);
-               rob.position = ccp(rob.position.x, obj.collisionRect.origin.y + (rob.contentSize.height / 2) - 15);
+               rob.position = ccp(rob.position.x, obj.collisionRect.origin.y + (rob.contentSize.height / 2) + 5.0f);
             }
          }
       }
