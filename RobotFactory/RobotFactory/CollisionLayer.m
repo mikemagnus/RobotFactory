@@ -45,7 +45,7 @@
    rob.position = _spawnPoint;
    
    id animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"walk"];
-   [rob runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]]];
+   [rob runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]]];
    
    [rob setFlipX:YES];
    [_robots addObject:rob];

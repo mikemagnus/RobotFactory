@@ -71,17 +71,19 @@
    [_bottomLayer update:dt];
 }
 
+#define ANIMATION_DELAY 1/30.0f
+
 -(void)loadAnimations
 {
    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"roboblue.plist"];
    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"roboblue.png"];
    [self addChild:spriteSheet];
    NSMutableArray *walkAnimFrames = [NSMutableArray array];
-   for (int i=0; i<=20; i++) {
+   for (int i=0; i<20; i++) {
       [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"RoboBlueSmall_000%02d.png", i]]];
    }
    
-   CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.1f];
+   CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:ANIMATION_DELAY];
    [[CCAnimationCache sharedAnimationCache] addAnimation:walkAnim name:@"walk"]; 
 }
 
