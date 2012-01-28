@@ -7,7 +7,6 @@
 //
 
 #import "MainMenuScene.h"
-#import "GameScene.h"
 #import "CCLabelTTF.h"
 #import "CCDirector.h"
 #import "GameLayer.h"
