@@ -13,7 +13,8 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
-   //new comment
+    //new comment
+    //omg changed!
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
