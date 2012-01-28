@@ -10,6 +10,7 @@
 
 #import "GameObject.h"
 #import "Robot.h"
+#import "Obstacle.h"
 
 
 @implementation CollisionLayer
@@ -23,7 +24,12 @@
       _touchables = [[CCArray alloc] initWithCapacity:10];
       _staticObjects = [[CCArray alloc] initWithCapacity:10];
       
-      _spawnPoint = ccp(winSize.width - 80,110);
+      _spawnPoint = ccp(winSize.width - 80,300);
+      
+      GameObject* conveyorBelt = [GameObject node];
+      conveyorBelt.collisionRect = CGRectMake(0.0f, 30.0f, 1024, 30);
+      conveyorBelt.type = kGamePlatform;
+      [_staticObjects addObject:conveyorBelt];
    }
    return self;
 }
@@ -49,16 +55,63 @@
    Robot* rob;
    CCARRAY_FOREACH(_robots, rob)
    {
-      if(rob.position.x <= 0.0 + rob.contentSize.width / 2)
+      rob.velocity = ccpAdd(rob.velocity, ccp(0.0f,40.0f));
+      rob.velocity = ccpClamp(rob.velocity, CGPointZero, ccp(120.0f,300.0f));
+      if(![rob flipX])
+      {
+         rob.position = ccpAdd(rob.position,ccp(rob.velocity.x * dt,0.0f));
+      }
+      else
+      {
+         rob.position = ccpSub(rob.position,ccp(rob.velocity.x * dt,0.0f));
+      }
+      CCArray* collisions;
+      
+      rob.position = ccpSub(rob.position, ccp(0.0f,rob.velocity.y * dt));
+      //Check vertical collisions
+      if( nil != (collisions = [self collisionsForRobot:rob]) )
+      {
+         GameObject* obj;
+         CCARRAY_FOREACH(collisions, obj)
+         {
+            if(obj.type == kGameObstacle)
+            {
+               Obstacle* obstacle = (Obstacle*) obj;
+               //Do more complex collision
+            }
+            else
+            {
+               rob.velocity = ccp(rob.velocity.x + 40.0f, 0.0f);
+               rob.position = ccp(rob.position.x, obj.collisionRect.origin.y + (rob.contentSize.height / 2) - 15);
+            }
+         }
+      }
+      
+      //check for horizontal collisions
+      if(rob.position.x <= 0.0 + rob.contentSize.width / 2 * rob.scale)
       {
          [rob setFlipX:NO];
       }
-      else if(rob.position.x >= 1024.0f - rob.contentSize.width / 2)
+      else if(rob.position.x >= 1024.0f - rob.contentSize.width / 2 * rob.scale)
       {
          [rob setFlipX:YES];
       }
-      rob.velocity = ccpAdd(rob.velocity, ccp(20.0f,0.0f));
-      [rob update:dt];
+      if( (collisions = [self collisionsForRobot:rob]) )
+      {
+         GameObject* obj;
+         CCARRAY_FOREACH(collisions, obj)
+         {
+            if(obj.type == kGameObstacle)
+            {
+               Obstacle* obstacle = (Obstacle*) obj;
+               //Do more complex collision
+            }
+            else
+            {
+               [rob setFlipX:!rob.flipX];
+            }
+         }
+      }
       GameObject* obj;
       CCARRAY_FOREACH(_staticObjects, obj)
       {
@@ -68,6 +121,23 @@
          }
       }
    }
+}
+
+-(CCArray*)collisionsForRobot:(Robot*)robot
+{
+   CCArray* collisions = nil;
+   //Static objects
+   GameObject* obj;
+   CCARRAY_FOREACH(_staticObjects, obj)
+   {
+      if(CGRectIntersectsRect([robot boundingBox], [obj collisionRect]))
+      {
+         if(nil == collisions)
+            collisions = [[CCArray alloc] initWithCapacity:3];
+         [collisions addObject:obj];
+      }
+   }
+   return collisions;
 }
 
 @end

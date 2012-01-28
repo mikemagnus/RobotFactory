@@ -22,6 +22,7 @@ typedef enum GameObjectType
    CGRect         _collisionRect;
 }
 
+@property(nonatomic)eGameObjectType type;
 @property(nonatomic)CGRect collisionRect;
 
 @end
