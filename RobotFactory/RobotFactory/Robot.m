@@ -19,7 +19,7 @@
    if ( (self = [super init]) ) 
    {
       _velocity = CGPointZero;
-      self.scale = 0.5f;
+//      self.scale = 0.5f;
    }
    return self;
 }

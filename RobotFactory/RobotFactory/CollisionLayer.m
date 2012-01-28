@@ -45,7 +45,7 @@
    rob.position = _spawnPoint;
    
    id animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"walk"];
-   [rob runAction:[CCAnimate actionWithAnimation:animation]];
+   [rob runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]]];
    
    [rob setFlipX:YES];
    [_robots addObject:rob];
@@ -86,7 +86,7 @@
             else
             {
                rob.velocity = ccp(rob.velocity.x + 40.0f, 0.0f);
-               rob.position = ccp(rob.position.x, obj.collisionRect.origin.y + (rob.contentSize.height / 2) + 5.0f);
+               rob.position = ccp(rob.position.x, obj.collisionRect.origin.y + rob.contentSize.height);
             }
          }
       }
