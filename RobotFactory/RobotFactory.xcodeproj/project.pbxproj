@@ -18,6 +18,7 @@
 		273D512C14D49ED700922477 /* Gear-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512714D49ED700922477 /* Gear-Overlay.png */; };
 		273D512D14D49ED700922477 /* Background01.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512814D49ED700922477 /* Background01.png */; };
 		273D512F14D49F0700922477 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512E14D49F0500922477 /* Background.png */; };
+		273D513214D4A3FA00922477 /* Ramp.m in Sources */ = {isa = PBXBuildFile; fileRef = 273D513114D4A3FA00922477 /* Ramp.m */; };
 		27FF947014D3D35C0011C187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF946F14D3D35C0011C187 /* QuartzCore.framework */; };
 		27FF947214D3D35C0011C187 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947114D3D35C0011C187 /* OpenGLES.framework */; };
 		27FF947414D3D35C0011C187 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947314D3D35C0011C187 /* OpenAL.framework */; };
@@ -158,6 +159,8 @@
 		273D512714D49ED700922477 /* Gear-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gear-Overlay.png"; sourceTree = "<group>"; };
 		273D512814D49ED700922477 /* Background01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background01.png; sourceTree = "<group>"; };
 		273D512E14D49F0500922477 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		273D513014D4A3FA00922477 /* Ramp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ramp.h; sourceTree = "<group>"; };
+		273D513114D4A3FA00922477 /* Ramp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ramp.m; sourceTree = "<group>"; };
 		27FF946B14D3D35C0011C187 /* RobotFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF946F14D3D35C0011C187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27FF947114D3D35C0011C187 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -852,6 +855,8 @@
 				27FF95F214D3D89A0011C187 /* Obstacle.m */,
 				273D50FF14D442DC00922477 /* GameObject.h */,
 				273D510014D442DC00922477 /* GameObject.m */,
+				273D513014D4A3FA00922477 /* Ramp.h */,
+				273D513114D4A3FA00922477 /* Ramp.m */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -1043,6 +1048,7 @@
 				509852F714D4013C007F5230 /* GameScene.m in Sources */,
 				273D50DC14D430DE00922477 /* CollisionLayer.m in Sources */,
 				273D510114D442DD00922477 /* GameObject.m in Sources */,
+				273D513214D4A3FA00922477 /* Ramp.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
