@@ -39,12 +39,19 @@
    [_staticObjects addObject:collision];
 }
 
--(void)spawnRobot
+-(void)spawnRobot:(eRobotColor)color
 {
-   Robot* rob = [Robot spriteWithSpriteFrameName:@"RoboBlueSmall_00000.png"];
+   Robot* rob;
+   id animation;
+   if (color == kRobotColorBlue) {
+      rob = [Robot spriteWithSpriteFrameName:@"RoboBlue_00000.png"];
+      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"blueWalk"];
+   } else {
+      rob = [Robot spriteWithSpriteFrameName:@"RoboRed_00000_1.png"];
+      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"redWalk"];
+   }
    rob.position = _spawnPoint;
    
-   id animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"walk"];
    [rob runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]]];
    
    [rob setFlipX:YES];

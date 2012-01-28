@@ -79,22 +79,31 @@
 
 -(void)loadAnimations
 {
-   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"roboblue.plist"];
-   CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"roboblue.png"];
-   [self addChild:spriteSheet];
-   NSMutableArray *walkAnimFrames = [NSMutableArray array];
-   for (int i=0; i<20; i++) {
-      [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"RoboBlueSmall_000%02d.png", i]]];
+   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", nil];
+   int numFrames[2] = {32,32};
+   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", nil];
+   
+   for (int i=0; i<[files count]; i++) {
+      NSString* file = [files objectAtIndex:i];
+      [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", file]];
+      CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png", file]];
+      [self addChild:spriteSheet];
+      NSMutableArray *frames = [NSMutableArray array];
+      for (int j=0; j<=numFrames[i]; j++) {
+         [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:[frameNames objectAtIndex:i], j]]];
+      }
+      
+      CCAnimation *anim = [CCAnimation animationWithFrames:frames delay:ANIMATION_DELAY];
+      [[CCAnimationCache sharedAnimationCache] addAnimation:anim name:[files objectAtIndex:i]]; 
+      
    }
    
-   CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:ANIMATION_DELAY];
-   [[CCAnimationCache sharedAnimationCache] addAnimation:walkAnim name:@"walk"]; 
 }
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-   [_topLayer spawnRobot];
-   [_bottomLayer spawnRobot];
+   [_topLayer spawnRobot:kRobotColorBlue];
+   [_bottomLayer spawnRobot:kRobotColorRed];
     return YES;
 }
 

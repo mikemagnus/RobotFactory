@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "Robot.h"
 
 @class GameObject;
 @class Robot;
@@ -24,7 +25,7 @@
 }
 
 -(void)addGameObjectToCollision:(GameObject*)collision;
--(void)spawnRobot;
+-(void)spawnRobot:(eRobotColor)color;
 
 -(void)update:(ccTime)dt;
 -(CCArray*)collisionsForRobot:(Robot*)robot;
