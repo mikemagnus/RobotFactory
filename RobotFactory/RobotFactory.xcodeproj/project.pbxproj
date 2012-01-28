@@ -131,6 +131,10 @@
 		27FF95ED14D3D68D0011C187 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95EC14D3D68D0011C187 /* GameLayer.m */; };
 		27FF95F014D3D8350011C187 /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95EF14D3D8350011C187 /* Robot.m */; };
 		27FF95F314D3D89A0011C187 /* Obstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95F214D3D89A0011C187 /* Obstacle.m */; };
+		5009955C14D46B3500BA5DC5 /* roboblue.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5009955A14D46B3500BA5DC5 /* roboblue.plist */; };
+		5009955D14D46B3500BA5DC5 /* roboblue.png in Resources */ = {isa = PBXBuildFile; fileRef = 5009955B14D46B3500BA5DC5 /* roboblue.png */; };
+		5009956014D46B4800BA5DC5 /* robored.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5009955E14D46B4800BA5DC5 /* robored.plist */; };
+		5009956114D46B4800BA5DC5 /* robored.png in Resources */ = {isa = PBXBuildFile; fileRef = 5009955F14D46B4800BA5DC5 /* robored.png */; };
 		509852F714D4013C007F5230 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 509852F614D4013C007F5230 /* GameScene.m */; };
 		50CDDFDA14D3EA4B00EC3613 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */; };
 /* End PBXBuildFile section */
@@ -385,6 +389,10 @@
 		27FF95EF14D3D8350011C187 /* Robot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Robot.m; sourceTree = "<group>"; };
 		27FF95F114D3D89A0011C187 /* Obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
 		27FF95F214D3D89A0011C187 /* Obstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacle.m; sourceTree = "<group>"; };
+		5009955A14D46B3500BA5DC5 /* roboblue.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = roboblue.plist; sourceTree = "<group>"; };
+		5009955B14D46B3500BA5DC5 /* roboblue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roboblue.png; sourceTree = "<group>"; };
+		5009955E14D46B4800BA5DC5 /* robored.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = robored.plist; sourceTree = "<group>"; };
+		5009955F14D46B4800BA5DC5 /* robored.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robored.png; sourceTree = "<group>"; };
 		509852F514D4013C007F5230 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		509852F614D4013C007F5230 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		50CDDFD814D3EA4B00EC3613 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
@@ -413,6 +421,10 @@
 		273D510214D44C1A00922477 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				5009955E14D46B4800BA5DC5 /* robored.plist */,
+				5009955F14D46B4800BA5DC5 /* robored.png */,
+				5009955A14D46B3500BA5DC5 /* roboblue.plist */,
+				5009955B14D46B3500BA5DC5 /* roboblue.png */,
 				273D510314D44C7600922477 /* robobo.png */,
 				273D510414D44C7600922477 /* roboboRed.png */,
 				273D510514D44C7600922477 /* Background.png */,
@@ -892,6 +904,10 @@
 				273D510814D44C7600922477 /* roboboRed.png in Resources */,
 				273D510914D44C7600922477 /* Background.png in Resources */,
 				273D510A14D44C7600922477 /* Belt.png in Resources */,
+				5009955C14D46B3500BA5DC5 /* roboblue.plist in Resources */,
+				5009955D14D46B3500BA5DC5 /* roboblue.png in Resources */,
+				5009956014D46B4800BA5DC5 /* robored.plist in Resources */,
+				5009956114D46B4800BA5DC5 /* robored.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

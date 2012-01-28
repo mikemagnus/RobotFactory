@@ -13,9 +13,15 @@
 // HelloWorldLayer
 @interface HelloWorldLayer : CCLayer
 {
-    //new comment
-    //omg changed!
+    CCSprite *_rob;
+    CCAction *_walkAction;
+    CCAction *_moveAction;
+    BOOL _moving;
 }
+
+@property (nonatomic, retain) CCSprite *rob;
+@property (nonatomic, retain) CCAction *walkAction;
+@property (nonatomic, retain) CCAction *moveAction;
 
 // returns a CCScene that contains the HelloWorldLayer as the only child
 +(CCScene *) scene;
