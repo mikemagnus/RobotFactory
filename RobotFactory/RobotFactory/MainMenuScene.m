@@ -25,25 +25,42 @@
 {
     if ((self = [super init])) {
         
-        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Robot Factory" fontName:@"Courier" fontSize:64];
+        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Robot Factory" fontName:@"Arial" fontSize:64];
         title.position = ccp(500, 700);
         [self addChild: title];
         
         CCLayer *menuLayer = [[CCLayer alloc] init];
         [self addChild:menuLayer];
         
-        CCMenuItemImage *startButton = [CCMenuItemImage itemFromNormalImage:@"startButton.png" selectedImage:@"startButtonSelected.png" target:self selector:@selector(startGame:)];
+        [CCMenuItemFont setFontSize:64];
         
-        CCMenu *menu = [CCMenu menuWithItems:startButton, nil];
+        CCMenuItem *menuItem1 = [CCMenuItemFont itemFromString:@"Play" target:self selector:@selector(onPlay:)];
+        CCMenuItem *menuItem2 = [CCMenuItemFont itemFromString:@"Settings" target:self selector:@selector(onHow:)];
+        CCMenuItem *menuItem3 = [CCMenuItemFont itemFromString:@"About" target:self selector:@selector(onAbout:)];
+        
+        //CCMenuItemImage *startButton = [CCMenuItemImage itemFromNormalImage:@"startButton.png" selectedImage:@"startButtonSelected.png" target:self selector:@selector(startGame:)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:menuItem1, menuItem2, menuItem3, nil];
+        [menu alignItemsVertically];
         [menuLayer addChild: menu];
         
     }
     return self;
 }
 
--(void) startGame: (id) sender
+-(void) onPlay: (id) sender
 {
     [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
+}
+
+-(void) onHow: (id) sender
+{
+    NSLog(@"Go to 'how to play' screen");
+}
+
+-(void) onAbout: (id) sender
+{
+    NSLog(@"Go to 'how to play' screen");
 }
 
 -(void) dealloc
