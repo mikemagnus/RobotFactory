@@ -126,7 +126,6 @@
 		27FF95F014D3D8350011C187 /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95EF14D3D8350011C187 /* Robot.m */; };
 		27FF95F314D3D89A0011C187 /* Obstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95F214D3D89A0011C187 /* Obstacle.m */; };
 		50CDDFDA14D3EA4B00EC3613 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */; };
-		50CDDFDE14D3F25100EC3613 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CDDFDD14D3F25100EC3613 /* GameScene.m */; };
 		50CDDFE514D3F59400EC3613 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50CDDFE314D3F59400EC3613 /* startButton.png */; };
 		50CDDFE614D3F59400EC3613 /* startButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 50CDDFE414D3F59400EC3613 /* startButtonSelected.png */; };
 /* End PBXBuildFile section */
@@ -375,8 +374,6 @@
 		27FF95F214D3D89A0011C187 /* Obstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacle.m; sourceTree = "<group>"; };
 		50CDDFD814D3EA4B00EC3613 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
-		50CDDFDC14D3F25100EC3613 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		50CDDFDD14D3F25100EC3613 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		50CDDFE314D3F59400EC3613 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = startButton.png; path = ../../../Resources/startButton.png; sourceTree = "<group>"; };
 		50CDDFE414D3F59400EC3613 /* startButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = startButtonSelected.png; path = ../../../Resources/startButtonSelected.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -445,8 +442,6 @@
 				27FF95D814D3D3620011C187 /* HelloWorldLayer.m */,
 				50CDDFD814D3EA4B00EC3613 /* MainMenuScene.h */,
 				50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */,
-				50CDDFDC14D3F25100EC3613 /* GameScene.h */,
-				50CDDFDD14D3F25100EC3613 /* GameScene.m */,
 				27FF95DA14D3D3620011C187 /* GameConfig.h */,
 				27FF948014D3D35C0011C187 /* Resources */,
 				27FF949414D3D35D0011C187 /* libs */,
@@ -978,7 +973,6 @@
 				27FF95F014D3D8350011C187 /* Robot.m in Sources */,
 				27FF95F314D3D89A0011C187 /* Obstacle.m in Sources */,
 				50CDDFDA14D3EA4B00EC3613 /* MainMenuScene.m in Sources */,
-				50CDDFDE14D3F25100EC3613 /* GameScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

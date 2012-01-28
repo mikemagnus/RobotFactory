@@ -10,7 +10,7 @@
 #import "GameScene.h"
 #import "CCLabelTTF.h"
 #import "CCDirector.h"
-#import "GameScene.h"
+#import "GameLayer.h"
 
 @implementation MainMenuScene
 
@@ -44,7 +44,7 @@
 
 -(void) startGame: (id) sender
 {
-    [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
+    [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
 }
 
 -(void) dealloc

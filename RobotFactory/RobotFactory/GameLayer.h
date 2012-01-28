@@ -16,6 +16,8 @@
    CCArray* _staticObjects;
 }
 
++(id) scene;
+
 -(void)update:(ccTime)dt;
 
 
