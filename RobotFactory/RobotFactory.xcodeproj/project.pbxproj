@@ -122,6 +122,9 @@
 		27FF95D314D3D3620011C187 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95D214D3D3620011C187 /* AppDelegate.m */; };
 		27FF95D614D3D3620011C187 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95D514D3D3620011C187 /* RootViewController.m */; };
 		27FF95D914D3D3620011C187 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95D814D3D3620011C187 /* HelloWorldLayer.m */; };
+		27FF95ED14D3D68D0011C187 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95EC14D3D68D0011C187 /* GameLayer.m */; };
+		27FF95F014D3D8350011C187 /* Robot.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95EF14D3D8350011C187 /* Robot.m */; };
+		27FF95F314D3D89A0011C187 /* Obstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95F214D3D89A0011C187 /* Obstacle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -360,6 +363,12 @@
 		27FF95D714D3D3620011C187 /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
 		27FF95D814D3D3620011C187 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		27FF95DA14D3D3620011C187 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
+		27FF95EB14D3D68D0011C187 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameLayer.h; sourceTree = "<group>"; };
+		27FF95EC14D3D68D0011C187 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameLayer.m; sourceTree = "<group>"; };
+		27FF95EE14D3D8350011C187 /* Robot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Robot.h; sourceTree = "<group>"; };
+		27FF95EF14D3D8350011C187 /* Robot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Robot.m; sourceTree = "<group>"; };
+		27FF95F114D3D89A0011C187 /* Obstacle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obstacle.h; sourceTree = "<group>"; };
+		27FF95F214D3D89A0011C187 /* Obstacle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Obstacle.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,6 +425,8 @@
 		27FF947F14D3D35C0011C187 /* RobotFactory */ = {
 			isa = PBXGroup;
 			children = (
+				27FF95EA14D3D6160011C187 /* Nodes */,
+				27FF95E814D3D60D0011C187 /* Layers */,
 				27FF95D114D3D3620011C187 /* AppDelegate.h */,
 				27FF95D214D3D3620011C187 /* AppDelegate.m */,
 				27FF95D414D3D3620011C187 /* RootViewController.h */,
@@ -758,6 +769,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		27FF95E814D3D60D0011C187 /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				27FF95EB14D3D68D0011C187 /* GameLayer.h */,
+				27FF95EC14D3D68D0011C187 /* GameLayer.m */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
+		27FF95EA14D3D6160011C187 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				27FF95EE14D3D8350011C187 /* Robot.h */,
+				27FF95EF14D3D8350011C187 /* Robot.m */,
+				27FF95F114D3D89A0011C187 /* Obstacle.h */,
+				27FF95F214D3D89A0011C187 /* Obstacle.m */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -925,6 +956,9 @@
 				27FF95D314D3D3620011C187 /* AppDelegate.m in Sources */,
 				27FF95D614D3D3620011C187 /* RootViewController.m in Sources */,
 				27FF95D914D3D3620011C187 /* HelloWorldLayer.m in Sources */,
+				27FF95ED14D3D68D0011C187 /* GameLayer.m in Sources */,
+				27FF95F014D3D8350011C187 /* Robot.m in Sources */,
+				27FF95F314D3D89A0011C187 /* Obstacle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1018,6 +1052,7 @@
 				27FF95DF14D3D3620011C187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
