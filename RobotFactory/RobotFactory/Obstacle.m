@@ -15,7 +15,7 @@
 {
    if ( (self = [super init]) ) 
    {
-      
+      _type = kGameObstacle;
    }
    return self;
 }
