@@ -25,5 +25,6 @@
 
 -(void)update:(ccTime)dt;
 
+-(void)loadAnimations;
 
 @end

@@ -55,6 +55,7 @@
        [self addChild:_bottomLayer z:Z_COLLISION];
        
        [self scheduleUpdate];
+       [self loadAnimations];
     }
     return self;
 }
@@ -68,6 +69,20 @@
 {
    [_topLayer update:dt];
    [_bottomLayer update:dt];
+}
+
+-(void)loadAnimations
+{
+   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"roboblue.plist"];
+   CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:@"roboblue.png"];
+   [self addChild:spriteSheet];
+   NSMutableArray *walkAnimFrames = [NSMutableArray array];
+   for (int i=0; i<=20; i++) {
+      [walkAnimFrames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"RoboBlueSmall_000%02d.png", i]]];
+   }
+   
+   CCAnimation *walkAnim = [CCAnimation animationWithFrames:walkAnimFrames delay:0.1f];
+   [[CCAnimationCache sharedAnimationCache] addAnimation:walkAnim name:@"walk"]; 
 }
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event

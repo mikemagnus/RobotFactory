@@ -41,8 +41,12 @@
 
 -(void)spawnRobot
 {
-   Robot* rob = [Robot spriteWithFile:@"robobo.png"];
+   Robot* rob = [Robot spriteWithSpriteFrameName:@"RoboBlueSmall_00000.png"];
    rob.position = _spawnPoint;
+   
+   id animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"walk"];
+   [rob runAction:[CCAnimate actionWithAnimation:animation]];
+   
    [rob setFlipX:YES];
    [_robots addObject:rob];
    [self addChild:rob];
