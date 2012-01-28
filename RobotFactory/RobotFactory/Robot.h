@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "GameObject.h"
 
-@interface Robot : CCNode {
-    
+@interface Robot : GameObject 
+{
+   CGPoint _velocity;
+   
+   GameObject* _collision;
 }
+
+@property(nonatomic)CGPoint velocity;
+@property(nonatomic)GameObject* collision;
+
+
+-(void)update:(ccTime)dt;
 
 @end

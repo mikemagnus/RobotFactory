@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273D50DC14D430DE00922477 /* CollisionLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 273D50DB14D430DE00922477 /* CollisionLayer.m */; };
+		273D510114D442DD00922477 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 273D510014D442DC00922477 /* GameObject.m */; };
+		273D510714D44C7600922477 /* robobo.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D510314D44C7600922477 /* robobo.png */; };
+		273D510814D44C7600922477 /* roboboRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D510414D44C7600922477 /* roboboRed.png */; };
+		273D510914D44C7600922477 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D510514D44C7600922477 /* Background.png */; };
+		273D510A14D44C7600922477 /* Belt.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D510614D44C7600922477 /* Belt.png */; };
 		27FF947014D3D35C0011C187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF946F14D3D35C0011C187 /* QuartzCore.framework */; };
 		27FF947214D3D35C0011C187 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947114D3D35C0011C187 /* OpenGLES.framework */; };
 		27FF947414D3D35C0011C187 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947314D3D35C0011C187 /* OpenAL.framework */; };
@@ -127,11 +133,17 @@
 		27FF95F314D3D89A0011C187 /* Obstacle.m in Sources */ = {isa = PBXBuildFile; fileRef = 27FF95F214D3D89A0011C187 /* Obstacle.m */; };
 		509852F714D4013C007F5230 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 509852F614D4013C007F5230 /* GameScene.m */; };
 		50CDDFDA14D3EA4B00EC3613 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */; };
-		50CDDFE514D3F59400EC3613 /* startButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 50CDDFE314D3F59400EC3613 /* startButton.png */; };
-		50CDDFE614D3F59400EC3613 /* startButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 50CDDFE414D3F59400EC3613 /* startButtonSelected.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		273D50DA14D430DE00922477 /* CollisionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionLayer.h; sourceTree = "<group>"; };
+		273D50DB14D430DE00922477 /* CollisionLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionLayer.m; sourceTree = "<group>"; };
+		273D50FF14D442DC00922477 /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		273D510014D442DC00922477 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
+		273D510314D44C7600922477 /* robobo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robobo.png; sourceTree = "<group>"; };
+		273D510414D44C7600922477 /* roboboRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roboboRed.png; sourceTree = "<group>"; };
+		273D510514D44C7600922477 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		273D510614D44C7600922477 /* Belt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Belt.png; sourceTree = "<group>"; };
 		27FF946B14D3D35C0011C187 /* RobotFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF946F14D3D35C0011C187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27FF947114D3D35C0011C187 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -377,8 +389,6 @@
 		509852F614D4013C007F5230 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		50CDDFD814D3EA4B00EC3613 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
 		50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuScene.m; sourceTree = "<group>"; };
-		50CDDFE314D3F59400EC3613 /* startButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = startButton.png; path = ../../../Resources/startButton.png; sourceTree = "<group>"; };
-		50CDDFE414D3F59400EC3613 /* startButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = startButtonSelected.png; path = ../../../Resources/startButtonSelected.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +410,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		273D510214D44C1A00922477 /* Gameplay */ = {
+			isa = PBXGroup;
+			children = (
+				273D510314D44C7600922477 /* robobo.png */,
+				273D510414D44C7600922477 /* roboboRed.png */,
+				273D510514D44C7600922477 /* Background.png */,
+				273D510614D44C7600922477 /* Belt.png */,
+			);
+			name = Gameplay;
+			sourceTree = "<group>";
+		};
 		27FF946014D3D35C0011C187 = {
 			isa = PBXGroup;
 			children = (
@@ -458,8 +479,7 @@
 		27FF948014D3D35C0011C187 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				50CDDFE314D3F59400EC3613 /* startButton.png */,
-				50CDDFE414D3F59400EC3613 /* startButtonSelected.png */,
+				273D510214D44C1A00922477 /* Gameplay */,
 				27FF948114D3D35C0011C187 /* Default.png */,
 				27FF948314D3D35C0011C187 /* fps_images.png */,
 				27FF948514D3D35C0011C187 /* Icon-72.png */,
@@ -790,6 +810,8 @@
 			children = (
 				27FF95EB14D3D68D0011C187 /* GameLayer.h */,
 				27FF95EC14D3D68D0011C187 /* GameLayer.m */,
+				273D50DA14D430DE00922477 /* CollisionLayer.h */,
+				273D50DB14D430DE00922477 /* CollisionLayer.m */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -801,6 +823,8 @@
 				27FF95EF14D3D8350011C187 /* Robot.m */,
 				27FF95F114D3D89A0011C187 /* Obstacle.h */,
 				27FF95F214D3D89A0011C187 /* Obstacle.m */,
+				273D50FF14D442DC00922477 /* GameObject.h */,
+				273D510014D442DC00922477 /* GameObject.m */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -864,8 +888,10 @@
 				27FF948E14D3D35C0011C187 /* Icon.png in Resources */,
 				27FF949014D3D35C0011C187 /* Icon@2x.png in Resources */,
 				27FF949314D3D35C0011C187 /* iTunesArtwork in Resources */,
-				50CDDFE514D3F59400EC3613 /* startButton.png in Resources */,
-				50CDDFE614D3F59400EC3613 /* startButtonSelected.png in Resources */,
+				273D510714D44C7600922477 /* robobo.png in Resources */,
+				273D510814D44C7600922477 /* roboboRed.png in Resources */,
+				273D510914D44C7600922477 /* Background.png in Resources */,
+				273D510A14D44C7600922477 /* Belt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,6 +1005,8 @@
 				27FF95F314D3D89A0011C187 /* Obstacle.m in Sources */,
 				50CDDFDA14D3EA4B00EC3613 /* MainMenuScene.m in Sources */,
 				509852F714D4013C007F5230 /* GameScene.m in Sources */,
+				273D50DC14D430DE00922477 /* CollisionLayer.m in Sources */,
+				273D510114D442DD00922477 /* GameObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

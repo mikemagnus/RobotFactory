@@ -8,12 +8,17 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
+#import "CollisionLayer.h"
 
-@interface GameLayer : CCLayer 
+#define Z_BACKGROUND 1
+#define Z_COLLISION 2
+#define Z_MIDDLE 3
+#define Z_HUD 4
+
+@interface GameLayer : CCLayer <CCTargetedTouchDelegate>
 {
-   CCArray* _robots;
-   CCArray* _touchables;
-   CCArray* _staticObjects;
+   CollisionLayer* _topLayer;
+   CollisionLayer* _bottomLayer;
 }
 
 +(id) scene;
