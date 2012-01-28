@@ -10,6 +10,7 @@
 #import "CCLabelTTF.h"
 #import "CCDirector.h"
 #import "GameLayer.h"
+#import "HelloWorldLayer.h"
 
 @implementation MainMenuScene
 
@@ -60,7 +61,7 @@
 
 -(void) onAbout: (id) sender
 {
-    NSLog(@"Go to 'how to play' screen");
+    [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
 }
 
 -(void) dealloc
