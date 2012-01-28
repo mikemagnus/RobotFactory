@@ -7,6 +7,10 @@
 //
 
 #import "MainMenuScene.h"
+#import "GameScene.h"
+#import "CCLabelTTF.h"
+#import "CCDirector.h"
+#import "GameScene.h"
 
 @implementation MainMenuScene
 
@@ -22,8 +26,25 @@
 {
     if ((self = [super init])) {
         
+        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Robot Factory" fontName:@"Courier" fontSize:64];
+        title.position = ccp(500, 700);
+        [self addChild: title];
+        
+        CCLayer *menuLayer = [[CCLayer alloc] init];
+        [self addChild:menuLayer];
+        
+        CCMenuItemImage *startButton = [CCMenuItemImage itemFromNormalImage:@"startButton.png" selectedImage:@"startButtonSelected.png" target:self selector:@selector(startGame:)];
+        
+        CCMenu *menu = [CCMenu menuWithItems:startButton, nil];
+        [menuLayer addChild: menu];
+        
     }
     return self;
+}
+
+-(void) startGame: (id) sender
+{
+    [[CCDirector sharedDirector] replaceScene:[GameScene scene]];
 }
 
 -(void) dealloc
