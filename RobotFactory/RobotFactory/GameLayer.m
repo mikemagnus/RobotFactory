@@ -270,7 +270,7 @@
       [_topLayer winGame];
       [_bottomLayer winGame];
       [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-      [[SimpleAudioEngine sharedEngine] playEffect:@"RobotVictory.mp3" pitch:1 pan:1 gain:3];
+      [[SimpleAudioEngine sharedEngine] playEffect:@"RobotVictory.mp3" pitch:1 pan:1 gain:5];
       [self runAction:[CCSequence actions:[CCDelayTime actionWithDuration:2.0f],[CCCallFunc actionWithTarget:self selector:@selector(winGame)],nil]];
    }
 }
@@ -286,6 +286,17 @@
    winOverlay.position = ccp(winSize.width/2, winSize.height/2);
    
    [self addChild:winOverlay z:Z_FOREGROUND];
+   
+   CCMenuItemImage *continueButton = [CCMenuItemImage itemFromNormalImage:@"ButtonContinue.png" selectedImage:@"ButtonContinuePressed.png" target:self selector:@selector(nextLevel:)];
+   continueButton.scale = 0.5;
+   CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"ButtonMainMenu.png" selectedImage:@"ButtonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
+   menuButton.scale = 0.5;
+   
+   CCMenu *winMenu = [CCMenu menuWithItems:continueButton, menuButton, nil];
+   [winMenu alignItemsVerticallyWithPadding:20];
+   winMenu.position = ccp(winSize.width/2+200, 200);
+   
+   [winOverlay addChild:winMenu z:Z_FOREGROUND];
 }
 
 -(void)pauseGame: (id) sender
@@ -326,6 +337,16 @@
       
       [[CCDirector sharedDirector] resume];
       [self removeChild:pauseOverlay cleanup:YES];
+   }
+}
+
+-(void)nextLevel: (id) sender
+{
+   levelIndex++;
+   if (levelIndex > 3) {
+      [self goToMenu: self];
+   } else {
+      [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:levelIndex]];
    }
 }
 

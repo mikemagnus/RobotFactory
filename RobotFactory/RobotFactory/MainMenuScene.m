@@ -51,12 +51,8 @@
       lvl2Button.scale = 0.4;
       CCMenuItemImage *lvl3Button = [CCMenuItemImage itemFromNormalImage:@"buttonLevel3.png" selectedImage:@"buttonLevel3Pressed.png" target:self selector:@selector(goToLevel3:)];
       lvl3Button.scale = 0.4;
-      CCMenuItemImage *lvl4Button = [CCMenuItemImage itemFromNormalImage:@"buttonLevel4.png" selectedImage:@"buttonLevel4Pressed.png" target:self selector:@selector(goToLevel4:)];
-      lvl4Button.scale = 0.4;
-      CCMenuItemImage *lvl5Button = [CCMenuItemImage itemFromNormalImage:@"buttonLevel5.png" selectedImage:@"buttonLevel5Pressed.png" target:self selector:@selector(goToLevel5:)];
-      lvl5Button.scale = 0.4;
       
-      CCMenu* lvlMenu = [CCMenu menuWithItems:lvl1Button, lvl2Button, lvl3Button, lvl4Button, lvl5Button, nil];
+      CCMenu* lvlMenu = [CCMenu menuWithItems:lvl1Button, lvl2Button, lvl3Button, nil];
       [lvlMenu alignItemsVerticallyWithPadding:25];
       lvlMenu.position = ccp(112, 0);
       
@@ -150,18 +146,6 @@
 {
    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
    [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:3]];
-}
-
--(void) goToLevel4: (id) sender
-{
-   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-   [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:4]];
-}
-
--(void) goToLevel5: (id) sender
-{
-   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-   [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:5]];
 }
 
 -(void) dealloc
