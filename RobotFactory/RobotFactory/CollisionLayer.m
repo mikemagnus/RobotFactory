@@ -267,7 +267,7 @@
    Robot* rob;
    CCARRAY_FOREACH(_robots, rob)
    {
-      if (rob.robColor != color) {
+      if (rob.robColor != color || rob.isDieing) {
          return NO;
       }
    }
