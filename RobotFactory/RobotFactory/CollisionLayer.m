@@ -253,7 +253,6 @@
       r2.size = CGSizeMake(r2.size.width/2, r2.size.height);
       if(CGRectIntersectsRect(r1,r2) && wall.isActive)
       {
-         NSLog(@"Wall Hit");
          if(nil == collisions)
             collisions = [[CCArray alloc] initWithCapacity:3];
          [collisions addObject:wall];
