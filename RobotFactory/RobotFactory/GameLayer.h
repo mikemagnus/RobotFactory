@@ -38,8 +38,8 @@
 +(id) sceneWithIndex:(int)level;
 
 -(id)initWithIndex:(int)level;
--(void)addTeslaTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos;
--(void)addWallTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos;
+-(void)addTeslaTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos topActive:(BOOL)ta;
+-(void)addWallTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos topActive:(BOOL)ta;
 
 -(void)update:(ccTime)dt;
 

@@ -144,7 +144,7 @@
     return self;
 }
 
--(void)addTeslaTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos
+-(void)addTeslaTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos topActive:(BOOL)ta
 {
    Obstacle* ob = [Obstacle spriteWithSpriteFrameName:@"GameTeslaCoil1.png"];
    ob.position = topPos;
@@ -154,15 +154,23 @@
    
    ob.buddy = ob2;
    ob2.buddy = ob;
-   ob.isActive = YES;
-   ob2.isActive = NO;
+   if(ta)
+   {
+      ob.isActive = YES;
+      ob2.isActive = NO;
+   }
+   else
+   {
+      ob.isActive = NO;
+      ob2.isActive = YES;
+   }
    [_topLayer addObstacleToCollision:ob];
    [_topLayer addChild:ob z:1];
    [_bottomLayer addObstacleToCollision:ob2];
    [_bottomLayer addChild:ob2 z:1];
 }
 
--(void)addWallTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos
+-(void)addWallTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos topActive:(BOOL)ta
 {
    Wall* wall = [Wall spriteWithSpriteFrameName:@"GameWall1.png"];
    wall.position = topPos;
@@ -171,8 +179,17 @@
    
    wall.buddy = wall2;
    wall2.buddy = wall;
-   wall.isActive = NO;
-   wall2.isActive = YES;
+   
+   if(ta)
+   {
+      wall.isActive = YES;
+      wall2.isActive = NO;
+   }
+   else
+   {
+      wall.isActive = NO;
+      wall2.isActive = YES;
+   }
    
    [_topLayer addWallToCollision:wall];
    [_topLayer addChild:wall z:1];
@@ -185,16 +202,25 @@
    switch (level) 
    {
       case 1:
-         [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98)];
-         [self addWallTopPosition:ccp(300,98) bottomPosition:ccp(724,98)];
+         [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98) topActive:YES];
+         [self addWallTopPosition:ccp(300,98) bottomPosition:ccp(724,98) topActive:NO];
          [_topLayer addRobotToSpawnArray:kRobotColorBlue];
          [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
          break;
       case 2:
-         [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98)];
-         [self addWallTopPosition:ccp(350,98) bottomPosition:ccp(724,98)];
+         [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98) topActive:YES];
+         [self addWallTopPosition:ccp(350,98) bottomPosition:ccp(674,98) topActive:NO];
+         [self addWallTopPosition:ccp(674,98) bottomPosition:ccp(350,98) topActive:YES];
+         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_topLayer addRobotToSpawnArray:kRobotColorRed];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
          break;
       case 3:
+         [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98) topActive:YES];
+         [_topLayer addRobotToSpawnArray:kRobotColorRed];
+         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
          break;
       default:
          break;
