@@ -83,11 +83,11 @@
        [self loadAnimations];
        
        [_topLayer addRobotToSpawnArray:kRobotColorRed];
-       //[_topLayer addRobotToSpawnArray:kRobotColorBlue];
+       [_topLayer addRobotToSpawnArray:kRobotColorBlue];
        //[_topLayer addRobotToSpawnArray:kRobotColorRed];
        
        [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
-       //[_bottomLayer addRobotToSpawnArray:kRobotColorRed];
+       [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
        //[_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
        
        Obstacle* ob = [Obstacle spriteWithSpriteFrameName:@"GameTeslaCoil1.png"];
@@ -105,6 +105,7 @@
        [_bottomLayer addObstacleToCollision:ob2];
        [_bottomLayer addChild:ob2];
        
+       [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robobo_ingame_music.caf" loop:YES];
        
        //Pause button
        
@@ -191,8 +192,18 @@
 
 -(void)winGame
 {
+   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+   
+   pauseButton.visible = NO;
    [self unscheduleUpdate];
-   [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"RobotVictory.mp3"];
+      
+   [[SimpleAudioEngine sharedEngine] playEffect:@"RobotVictory.mp3" pitch:1 pan:1 gain:3];
+   
+   CGSize winSize = [[CCDirector sharedDirector] winSize];
+   CCSprite* winOverlay = [CCSprite spriteWithFile:@"Complete-Overlay.png"];
+   winOverlay.position = ccp(winSize.width/2, winSize.height/2);
+   
+   [self addChild:winOverlay z:Z_FOREGROUND];
 }
 
 -(void)pauseGame: (id) sender
@@ -228,6 +239,8 @@
       
       [[CCDirector sharedDirector] resume];
       [self removeChild:pauseOverlay cleanup:YES];
+      
+      [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robobo_ingame_music.caf" loop:YES];
    }
 }
 
