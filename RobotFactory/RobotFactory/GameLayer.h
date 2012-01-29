@@ -31,11 +31,15 @@
    BOOL gamePaused;
    CCSprite* pauseOverlay;
    CCMenuItemImage *pauseButton;
+   
+   int levelIndex;
 }
 
-+(id) scene;
++(id) sceneWithIndex:(int)level;
 
 -(id)initWithIndex:(int)level;
+-(void)addTeslaTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos;
+-(void)addWallTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos;
 
 -(void)update:(ccTime)dt;
 

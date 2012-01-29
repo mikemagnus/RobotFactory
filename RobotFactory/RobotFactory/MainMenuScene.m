@@ -143,7 +143,7 @@
 -(void) goToLevel1: (id) sender
 {
    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-   [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
+   [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:1]];
 }
 
 -(void) goToLevel2: (id) sender

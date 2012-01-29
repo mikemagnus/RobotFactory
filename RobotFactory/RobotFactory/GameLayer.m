@@ -16,10 +16,10 @@
 
 @implementation GameLayer
 
-+(id) scene
++(id) sceneWithIndex:(int)level
 {
    CCScene *scene = [CCScene node];
-   GameLayer *layer = [GameLayer node];
+   GameLayer *layer = [[[GameLayer alloc] initWithIndex:level] autorelease];
    [scene addChild: layer];
    return scene;
 }
@@ -33,6 +33,8 @@
         [self addChild: message];*/
        CGSize winSize = [[CCDirector sharedDirector] winSize];
        
+       levelIndex = level;
+       
        self.isTouchEnabled = YES;
        
        _topLayer = [[CollisionLayer alloc] init];
@@ -44,7 +46,7 @@
        [_bottomLayer setDelegate:self andSelector:@selector(startBottomSpawn)];
        _bottomLayer.rotation = 180.0f;
        
-       CCSprite* background = [CCSprite spriteWithFile:@"Level-Backgroun01.png"];
+       CCSprite* background = [CCSprite spriteWithFile:[NSString stringWithFormat:@"Level-Backgroun0%d.png",level]];
        background.position = ccp(winSize.width / 2, winSize.height/2);
        
        GameObject* base = [GameObject spriteWithFile:@"Belt.png"];
@@ -85,7 +87,7 @@
        [self scheduleUpdate];
        [self loadAnimations];
        
-       [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+       /*[_topLayer addRobotToSpawnArray:kRobotColorBlue];
        //[_topLayer addRobotToSpawnArray:kRobotColorBlue];
        //[_topLayer addRobotToSpawnArray:kRobotColorRed];
        
@@ -121,7 +123,9 @@
        [_topLayer addWallToCollision:wall];
        [_topLayer addChild:wall z:1];
        [_bottomLayer addWallToCollision:wall2];
-       [_bottomLayer addChild:wall2 z:1];
+       [_bottomLayer addChild:wall2 z:1];*/
+       
+       [self setupLevel:level];
        
        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robobo_ingame_music.caf" loop:YES];
        
@@ -140,7 +144,7 @@
     return self;
 }
 
--(void)addTeslaTopPosistion:(CGPoint)topPos bottomPosition:(CGPoint)botPos
+-(void)addTeslaTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos
 {
    Obstacle* ob = [Obstacle spriteWithSpriteFrameName:@"GameTeslaCoil1.png"];
    ob.position = topPos;
@@ -178,7 +182,21 @@
 
 -(void)setupLevel:(int)level
 {
-   
+   switch (level) 
+   {
+      case 1:
+         [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98)];
+         [self addWallTopPosition:ccp(300,98) bottomPosition:ccp(724,98)];
+         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
+         break;
+      case 2:
+         break;
+      case 3:
+         break;
+      default:
+         break;
+   }
 }
 
 
