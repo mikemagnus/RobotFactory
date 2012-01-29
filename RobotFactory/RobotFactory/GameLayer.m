@@ -82,11 +82,11 @@
        [self scheduleUpdate];
        [self loadAnimations];
        
-       [_topLayer addRobotToSpawnArray:kRobotColorRed];
+       [_topLayer addRobotToSpawnArray:kRobotColorBlue];
        //[_topLayer addRobotToSpawnArray:kRobotColorBlue];
        //[_topLayer addRobotToSpawnArray:kRobotColorRed];
        
-       [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
+       [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
        //[_bottomLayer addRobotToSpawnArray:kRobotColorRed];
        //[_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
        
@@ -101,9 +101,9 @@
        ob.isActive = YES;
        ob2.isActive = NO;
        [_topLayer addObstacleToCollision:ob];
-       [_topLayer addChild:ob];
+       [_topLayer addChild:ob z:1];
        [_bottomLayer addObstacleToCollision:ob2];
-       [_bottomLayer addChild:ob2];
+       [_bottomLayer addChild:ob2 z:1];
        
        
        //Pause button

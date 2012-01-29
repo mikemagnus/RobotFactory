@@ -14,6 +14,7 @@ typedef enum GameObjectType
    kGameRobot,
    kGameObstacle,
    kGameRamp,
+   kGameFan,
    kGamePlatform
 }eGameObjectType;
 

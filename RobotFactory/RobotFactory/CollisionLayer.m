@@ -88,7 +88,7 @@
    [rob setFlipX:YES];
    [rob runWalk];
    [_robots addObject:rob];
-   [self addChild:rob];
+   [self addChild:rob z:0];
    [rob setDelegate:self.parent];
    [_spawnArray removeObjectAtIndex:0];
 }
