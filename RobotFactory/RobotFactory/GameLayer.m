@@ -102,6 +102,8 @@
        ob2.isActive = NO;
        [_topLayer addObstacleToCollision:ob];
        [_topLayer addChild:ob];
+       [_bottomLayer addObstacleToCollision:ob2];
+       [_bottomLayer addChild:ob2];
        
        
        //Pause button
@@ -248,6 +250,12 @@
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+   CGPoint point = [touch locationInView:[touch view]];
+   CGRect rect = CGRectMake(20, 688, 60, 60);
+   if (CGRectContainsPoint(rect, point)) {
+      NSLog(@"Pause game here");
+      return YES;
+   }
    
 //   [_topLayer spawnRobot:kRobotColorBlue];
 //   [_bottomLayer spawnRobot:kRobotColorRed];
