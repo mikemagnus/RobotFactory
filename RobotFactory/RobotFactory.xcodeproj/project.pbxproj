@@ -22,6 +22,8 @@
 		273D515014D50D6000922477 /* GameButtonTeslaCoil.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D514D14D50D6000922477 /* GameButtonTeslaCoil.png */; };
 		273D515114D50D6000922477 /* GameButtonTeslaCoilButtonPress.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D514E14D50D6000922477 /* GameButtonTeslaCoilButtonPress.png */; };
 		273D515214D50D6000922477 /* GameTeslaCoil.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D514F14D50D6000922477 /* GameTeslaCoil.png */; };
+		273D515B14D5241800922477 /* TeslaCoil_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 273D515914D5241800922477 /* TeslaCoil_default.plist */; };
+		273D515C14D5241800922477 /* TeslaCoil_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D515A14D5241800922477 /* TeslaCoil_default.png */; };
 		27FF947014D3D35C0011C187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF946F14D3D35C0011C187 /* QuartzCore.framework */; };
 		27FF947214D3D35C0011C187 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947114D3D35C0011C187 /* OpenGLES.framework */; };
 		27FF947414D3D35C0011C187 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947314D3D35C0011C187 /* OpenAL.framework */; };
@@ -191,6 +193,8 @@
 		273D514D14D50D6000922477 /* GameButtonTeslaCoil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameButtonTeslaCoil.png; sourceTree = "<group>"; };
 		273D514E14D50D6000922477 /* GameButtonTeslaCoilButtonPress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameButtonTeslaCoilButtonPress.png; sourceTree = "<group>"; };
 		273D514F14D50D6000922477 /* GameTeslaCoil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameTeslaCoil.png; sourceTree = "<group>"; };
+		273D515914D5241800922477 /* TeslaCoil_default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TeslaCoil_default.plist; sourceTree = "<group>"; };
+		273D515A14D5241800922477 /* TeslaCoil_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TeslaCoil_default.png; sourceTree = "<group>"; };
 		27FF946B14D3D35C0011C187 /* RobotFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF946F14D3D35C0011C187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27FF947114D3D35C0011C187 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -487,6 +491,8 @@
 		273D510214D44C1A00922477 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				273D515914D5241800922477 /* TeslaCoil_default.plist */,
+				273D515A14D5241800922477 /* TeslaCoil_default.png */,
 				273D514D14D50D6000922477 /* GameButtonTeslaCoil.png */,
 				273D514E14D50D6000922477 /* GameButtonTeslaCoilButtonPress.png */,
 				273D514F14D50D6000922477 /* GameTeslaCoil.png */,
