@@ -30,21 +30,26 @@
       [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robot.mp3" loop:YES];
       
       CGSize winSize = [[CCDirector sharedDirector] winSize];
-      CCSprite* background = [CCSprite spriteWithFile:@"mainMenu.png"];
+      
+      CCSprite* background = [CCSprite spriteWithFile:@"MenuBackground.png"];
       background.position = ccp(winSize.width / 2, winSize.height/2);
+      credits = [CCSprite spriteWithFile:@"MenuCredits.png"];
+      credits.position = ccp(winSize.width + 601/2, winSize.height/2);
+      creditsOpen = NO;
+      creditsMoving = NO;
       
       CCLayer *menuLayer = [[CCLayer alloc] init];
       [self addChild:menuLayer];
       
-      CCMenuItemImage *startButton = [CCMenuItemImage itemFromNormalImage:@"Play-static.png" selectedImage:@"Play-pressed.png" target:self selector:@selector(startGame:)];
-      CCMenuItemImage *creditsButton = [CCMenuItemImage itemFromNormalImage:@"Credits-static.png" selectedImage:@"Credits-pressed.png" target:self selector:@selector(viewCredits:)];
+      CCMenuItemImage *startButton = [CCMenuItemImage itemFromNormalImage:@"MenuButtonPlay.png" selectedImage:@"MenuButtonPlayPress.png" target:self selector:@selector(startGame:)];
+      CCMenuItemImage *creditsButton = [CCMenuItemImage itemFromNormalImage:@"MenuButtonCredits.png" selectedImage:@"MenuButtonCreditsPress.png" target:self selector:@selector(toggleCredits:)];
       
       CCMenu *menu = [CCMenu menuWithItems:startButton, creditsButton, nil];
-      [menu alignItemsVerticallyWithPadding:20];
-      menu.position = ccp(600, 100);
-      menu.scale = 0.65;
+      [menu alignItemsVerticallyWithPadding:27];
+      menu.position = ccp(180, winSize.height/2);
       
-      [menuLayer addChild:menu z:Z_FOREGROUND];
+      [menuLayer addChild:credits z:Z_FOREGROUND];
+      [menuLayer addChild:menu z:Z_MIDDLE];
       [menuLayer addChild:background z:Z_BACKGROUND];
       
    }
@@ -57,9 +62,23 @@
    [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
 }
 
--(void) viewCredits: (id) sender
+-(void) toggleCredits: (id) sender
 {
-   [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
+   if (!creditsMoving) {
+      creditsMoving = YES;
+      if (creditsOpen) {
+         creditsOpen = NO;
+         [credits runAction:[CCSequence actions:[CCMoveBy actionWithDuration:0.5 position:ccp(660, 0)], [CCCallFunc actionWithTarget:self selector:@selector(setCreditsNotMoving)], nil]];
+      } else {
+         creditsOpen = YES;
+         [credits runAction:[CCSequence actions:[CCMoveBy actionWithDuration:0.5 position:ccp(-660, 0)], [CCCallFunc actionWithTarget:self selector:@selector(setCreditsNotMoving)], nil]];
+      }
+   }
+}
+
+-(void) setCreditsNotMoving
+{
+   creditsMoving = FALSE;
 }
 
 -(void) dealloc

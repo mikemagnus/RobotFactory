@@ -10,7 +10,9 @@
 
 @interface MainMenuScene : CCLayer
 {
-    
+   CCSprite* credits;
+   BOOL creditsOpen;
+   BOOL creditsMoving;
 }
 
 +(id) scene;
