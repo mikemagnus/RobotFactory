@@ -332,10 +332,10 @@
    
    [self addChild:winOverlay z:Z_FOREGROUND];
    
-   CCMenuItemImage *continueButton = [CCMenuItemImage itemFromNormalImage:@"ButtonContinue.png" selectedImage:@"ButtonContinuePressed.png" target:self selector:@selector(nextLevel:)];
-   continueButton.scale = 0.45;
-   CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"ButtonMainMenu.png" selectedImage:@"ButtonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
-   menuButton.scale = 0.45;
+   CCMenuItemImage *continueButton = [CCMenuItemImage itemFromNormalImage:@"buttonContinue.png" selectedImage:@"buttonContinuePressed.png" target:self selector:@selector(nextLevel:)];
+   continueButton.scale = 0.5;
+   CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
+   menuButton.scale = 0.5;
    
    CCMenu *winMenu = [CCMenu menuWithItems:continueButton, menuButton, nil];
    [winMenu alignItemsVerticallyWithPadding:20];
