@@ -14,9 +14,10 @@
 {
    Obstacle* _buddy;
    
-   
+   BOOL _isActive;
 }
 
 @property(nonatomic,assign)Obstacle* buddy;
+@property(nonatomic,setter = setIsActive:)BOOL isActive;
 
 @end
