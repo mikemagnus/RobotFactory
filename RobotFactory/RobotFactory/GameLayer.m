@@ -409,7 +409,7 @@
 -(void)nextLevel: (id) sender
 {
    levelIndex++;
-   if (levelIndex > 3) {
+   if (levelIndex > 5) {
       [self goToMenu: self];
    } else {
       [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:levelIndex]];
