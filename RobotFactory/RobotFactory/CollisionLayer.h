@@ -12,6 +12,7 @@
 #import "RobotDelegate.h"
 
 @class GameObject;
+@class Obstacle;
 
 @interface CollisionLayer : CCLayer <RobotDelegate>
 {
@@ -35,6 +36,7 @@
 -(void)setDelegate:(id)delegate andSelector:(SEL)spawnSel;
 
 -(void)addGameObjectToCollision:(GameObject*)collision;
+-(void)addObstacleToCollision:(Obstacle*)obstacle;
 -(void)cleanupRobotDeath:(Robot*)robot;
 -(void)addRobotToSpawnArray:(eRobotColor)color;
 -(void)spawnRobot:(eRobotColor)color;

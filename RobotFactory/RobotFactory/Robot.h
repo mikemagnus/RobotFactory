@@ -22,6 +22,8 @@ typedef enum RobotColor
 {
     CGPoint _velocity;
    
+   BOOL     _isDieing;
+   
     GameObject* _collision;
     
    eRobotColor _robColor;
@@ -30,6 +32,7 @@ typedef enum RobotColor
 }
 
 @property(nonatomic)CGPoint velocity;
+@property(nonatomic)BOOL isDieing;
 @property(nonatomic)GameObject* collision;
 @property(nonatomic)eRobotColor robColor;
 

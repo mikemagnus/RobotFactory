@@ -12,7 +12,9 @@
 
 @interface Obstacle : GameObject <CCTargetedTouchDelegate>
 {
-    
+   Obstacle* _buddy;
 }
+
+@property(nonatomic,assign)Obstacle* buddy;
 
 @end

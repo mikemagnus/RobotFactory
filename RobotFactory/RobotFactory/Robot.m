@@ -14,6 +14,7 @@
 
 @synthesize velocity = _velocity;
 @synthesize collision = _collision;
+@synthesize isDieing = _isDieing;
 @synthesize robColor = _robColor;
 
 - (id)initWithRobotColor:(eRobotColor)color
@@ -59,6 +60,7 @@
 {
    //Run the death animation
    //Run in sequence to call deathFinished once complete
+   _isDieing = YES;
    CCAnimation* animation;
    if(_robColor == kRobotColorRed)
    {
@@ -68,12 +70,14 @@
    {
       animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"blueDeath"];
    }
-   [self runAction:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]];
+   [self runAction:[CCSequence actions:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO],[CCCallFunc actionWithTarget:self selector:@selector(deathFinished)],nil]];
+   [self runAction:[CCFadeOut actionWithDuration:1.0f]];
 }
 
 -(void)deathFinished
 {
    //Fade/remove
+   [_delegate robotDied:self];
    //Add to opposite side
 }
 

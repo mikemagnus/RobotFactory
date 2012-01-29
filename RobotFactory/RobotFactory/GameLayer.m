@@ -8,6 +8,7 @@
 
 #import "GameLayer.h"
 #import "GameObject.h"
+#import "Obstacle.h"
 
 @implementation GameLayer
 
@@ -87,6 +88,12 @@
        [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
        [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
        [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
+       
+       Obstacle* ob = [Obstacle spriteWithFile:@"GameTeslaCoil.png"];
+       ob.position = ccp(winSize.width/2,-37 + 100);
+       ob.collisionRect = ob.boundingBox;
+       [_topLayer addObstacleToCollision:ob];
+       [_topLayer addChild:ob];
     }
     return self;
 }
@@ -128,17 +135,17 @@
 }
 
 
--(void)robotDied:(Robot *)robot onSide:(CollisionLayer *)side
+-(void)robotDied:(Robot *)robot
 {
-   if( side == _topLayer)
+   if( robot.parent == _topLayer)
    {
-      
+      [_bottomLayer addRobotToSpawnArray:robot.robColor];
    }
    else
    {
-      
+      [_topLayer addRobotToSpawnArray:robot.robColor];
    }
-   [side removeChild:robot cleanup:YES];
+   [robot removeFromParentAndCleanup:YES];
 }
 
 
