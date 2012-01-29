@@ -10,6 +10,7 @@
 #import "GameLayer.h"
 #import "GameObject.h"
 #import "Obstacle.h"
+#import "MainMenuScene.h"
 
 @implementation GameLayer
 
@@ -224,11 +225,14 @@
       pauseOverlay.position = ccp(winSize.width/2, winSize.height/2);
       
       
-      CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"MenuButtonPlay.png" selectedImage:@"MenuButtonPlayPress.png" target:self selector:@selector(resumeGame:)];
+      CCMenuItemImage *resumeButton = [CCMenuItemImage itemFromNormalImage:@"ButtonResume.png" selectedImage:@"ButtonResumePressed.png" target:self selector:@selector(resumeGame:)];
+      resumeButton.scale = 0.5;
+      CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"ButtonMainMenu.png" selectedImage:@"ButtonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
+      menuButton.scale = 0.5;
       
-      CCMenu *pauseMenu = [CCMenu menuWithItems:menuButton, nil];
-      [pauseMenu alignItemsVerticallyWithPadding:10];
-      pauseMenu.position = ccp(winSize.width/2, 500);
+      CCMenu *pauseMenu = [CCMenu menuWithItems:resumeButton, menuButton, nil];
+      [pauseMenu alignItemsVerticallyWithPadding:20];
+      pauseMenu.position = ccp(winSize.width/2, 200);
       
       [self addChild:pauseOverlay z:Z_FOREGROUND];
       [pauseOverlay addChild:pauseMenu z:Z_FOREGROUND];
@@ -245,6 +249,11 @@
       [[CCDirector sharedDirector] resume];
       [self removeChild:pauseOverlay cleanup:YES];
    }
+}
+
+-(void)goToMenu: (id) sender
+{
+   [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
 }
 
 #define ANIMATION_DELAY 1/30.0f
