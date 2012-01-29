@@ -23,7 +23,7 @@
    return scene;
 }
 
-- (id)init 
+- (id)init
 {
     if ( (self = [super init]) ) 
     {
@@ -124,6 +124,12 @@
     return self;
 }
 
+-(void)setupLevel:(int)level
+{
+   
+}
+
+
 -(void)startTopSpawn
 {
    [_topAssembler runAction:[CCSequence actions:[CCMoveBy actionWithDuration:0.5f position:ccp(0.0f,-400.0f)],
@@ -188,21 +194,21 @@
    [_topLayer update:dt];
    [_bottomLayer update:dt];
    if ([_topLayer spawnQueueEmpty] && [_bottomLayer spawnQueueEmpty] && [_topLayer allSameColor:kRobotColorRed] && [_bottomLayer allSameColor:kRobotColorBlue]) {
-      [self winGame];
+      [self unscheduleUpdate];
+      [_topLayer winGame];
+      [_bottomLayer winGame];
+      [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+      [[SimpleAudioEngine sharedEngine] playEffect:@"RobotVictory.mp3" pitch:1 pan:1 gain:3];
+      [self runAction:[CCSequence actions:[CCDelayTime actionWithDuration:2.0f],[CCCallFunc actionWithTarget:self selector:@selector(winGame)],nil]];
    }
 }
 
 -(void)winGame
 {
-   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-   
-   [_topLayer winGame];
-   [_bottomLayer winGame];
+
    
    pauseButton.visible = NO;
-   [self unscheduleUpdate];
-      
-   [[SimpleAudioEngine sharedEngine] playEffect:@"RobotVictory.mp3" pitch:1 pan:1 gain:3];
+//   [self unscheduleUpdate];
    
    CGSize winSize = [[CCDirector sharedDirector] winSize];
    CCSprite* winOverlay = [CCSprite spriteWithFile:@"Complete-Overlay.png"];
@@ -263,9 +269,9 @@
 
 -(void)loadAnimations
 {
-   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", @"blueDeath", @"redDeath",@"TeslaCoil_default",@"roboredWin", nil];
+   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", @"blueDeath", @"redDeath",@"TeslaCoil_default", nil];
    int numFrames[6] = {32,32,38,38,3,40};
-   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", @"RoboBlueDeath_%02d.png", @"RoboRedDeath_%02d.png",@"GameTeslaCoil%d.png",@"RoboRedWin_%02d.png", nil];
+   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", @"RoboBlueDeath_%02d.png", @"RoboRedDeath_%02d.png",@"GameTeslaCoil%d.png", nil];
    
    for (int i=0; i<[files count]; i++) {
       NSString* file = [files objectAtIndex:i];
@@ -284,6 +290,22 @@
       [[CCAnimationCache sharedAnimationCache] addAnimation:anim name:[files objectAtIndex:i]]; 
       
    }
+   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", @"roboredWin"]];
+   CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png",@"roboredWin"]];
+   [self addChild:spriteSheet];
+   NSMutableArray *frames = [NSMutableArray array];
+   for (int j=0; j<28; j++) {
+      [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"RoboRedWin_%02d.png", j]]];
+   }
+   for (int i=0; i<3;i++)
+   {
+      for (int j=28; j<=40;j++)
+      {
+         [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"RoboRedWin_%02d.png", j]]];
+      }
+   }
+   CCAnimation *anim = [CCAnimation animationWithFrames:frames delay:ANIMATION_DELAY];
+   [[CCAnimationCache sharedAnimationCache] addAnimation:anim name:@"roboredWin"]; 
    
 }
 
