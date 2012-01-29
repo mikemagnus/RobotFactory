@@ -79,9 +79,9 @@
 
 -(void)loadAnimations
 {
-   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", nil];
-   int numFrames[2] = {32,32};
-   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", nil];
+   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", @"blueDeath", nil];
+   int numFrames[3] = {32,32,38};
+   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", @"RoboBlueDeath_%02d.png", nil];
    
    for (int i=0; i<[files count]; i++) {
       NSString* file = [files objectAtIndex:i];
@@ -102,6 +102,12 @@
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+   CGPoint point = [touch locationInView:[touch view]];
+   CGRect rect = CGRectMake(20, 688, 60, 60);
+   if (CGRectContainsPoint(rect, point)) {
+      NSLog(@"Pause game here");
+   }
+   
    [_topLayer spawnRobot:kRobotColorBlue];
    [_bottomLayer spawnRobot:kRobotColorRed];
     return YES;
