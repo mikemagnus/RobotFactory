@@ -37,6 +37,7 @@
 		273D518C14D5BBB800922477 /* roboredWin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 273D518A14D5BBB800922477 /* roboredWin.plist */; };
 		273D519514D5BF4F00922477 /* TeslaCoil_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 273D519314D5BF4F00922477 /* TeslaCoil_default.plist */; };
 		273D519614D5BF4F00922477 /* TeslaCoil_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D519414D5BF4F00922477 /* TeslaCoil_default.png */; };
+		273D519914D5C8C500922477 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 273D519814D5C8C400922477 /* Wall.m */; };
 		27FF947014D3D35C0011C187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF946F14D3D35C0011C187 /* QuartzCore.framework */; };
 		27FF947214D3D35C0011C187 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947114D3D35C0011C187 /* OpenGLES.framework */; };
 		27FF947414D3D35C0011C187 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947314D3D35C0011C187 /* OpenAL.framework */; };
@@ -222,6 +223,8 @@
 		273D518A14D5BBB800922477 /* roboredWin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = roboredWin.plist; sourceTree = "<group>"; };
 		273D519314D5BF4F00922477 /* TeslaCoil_default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TeslaCoil_default.plist; sourceTree = "<group>"; };
 		273D519414D5BF4F00922477 /* TeslaCoil_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TeslaCoil_default.png; sourceTree = "<group>"; };
+		273D519714D5C8C400922477 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
+		273D519814D5C8C400922477 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wall.m; sourceTree = "<group>"; };
 		27FF946B14D3D35C0011C187 /* RobotFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF946F14D3D35C0011C187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27FF947114D3D35C0011C187 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -987,6 +990,8 @@
 				273D513014D4A3FA00922477 /* Ramp.h */,
 				273D513114D4A3FA00922477 /* Ramp.m */,
 				273D513B14D4DDBB00922477 /* RobotDelegate.h */,
+				273D519714D5C8C400922477 /* Wall.h */,
+				273D519814D5C8C400922477 /* Wall.m */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -1235,6 +1240,7 @@
 				273D50DC14D430DE00922477 /* CollisionLayer.m in Sources */,
 				273D510114D442DD00922477 /* GameObject.m in Sources */,
 				273D513214D4A3FA00922477 /* Ramp.m in Sources */,
+				273D519914D5C8C500922477 /* Wall.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

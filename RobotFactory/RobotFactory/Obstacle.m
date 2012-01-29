@@ -93,6 +93,8 @@
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+   if([[CCDirector sharedDirector] isPaused])
+      return NO;
    CGPoint tp = [self convertTouchToNodeSpace:touch];
    if(CGRectContainsPoint([self textureRect], tp))
    {
