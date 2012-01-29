@@ -194,8 +194,8 @@
       NSLog(@"Pause game here");
    }
    
-   [_topLayer spawnRobot:kRobotColorBlue];
-   [_bottomLayer spawnRobot:kRobotColorRed];
+//   [_topLayer spawnRobot:kRobotColorBlue];
+//   [_bottomLayer spawnRobot:kRobotColorRed];
     return YES;
 }
 

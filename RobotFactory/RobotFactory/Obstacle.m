@@ -34,7 +34,12 @@
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-   NSLog(@"Getting touch");
+   CGPoint tp = [self convertTouchToNodeSpace:touch];
+   if(CGRectContainsPoint([self boundingBox], tp))
+   {
+      NSLog(@"Getting touch");
+      return YES;
+   }
    return NO;
 }
 
