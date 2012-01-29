@@ -28,8 +28,6 @@
    CCAnimation* anim = [[CCAnimationCache sharedAnimationCache] animationByName:@"TeslaCoil_default"];
    if(!isActive)
    {
-      [glow stopAllActions];
-      glow.visible = NO;
       [self runAction:[CCSequence actions:[CCAnimate actionWithAnimation:anim restoreOriginalFrame:NO],[CCCallFunc actionWithTarget:self selector:@selector(doneAnim)],nil]];
    }
    else
