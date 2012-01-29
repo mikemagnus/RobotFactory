@@ -387,7 +387,7 @@
       
       CCMenu *pauseMenu = [CCMenu menuWithItems:resumeButton, menuButton, nil];
       [pauseMenu alignItemsVerticallyWithPadding:20];
-      pauseMenu.position = ccp(winSize.width/2, 200);
+      pauseMenu.position = ccp(winSize.width/2+350, 150);
       
       [self addChild:pauseOverlay z:Z_FOREGROUND];
       [pauseOverlay addChild:pauseMenu z:Z_FOREGROUND];
