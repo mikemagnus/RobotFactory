@@ -16,6 +16,7 @@ typedef enum RobotColor
     kRobotColorRed
 }eRobotColor;
 
+@protocol RobotDelegate;
 
 @interface Robot : GameObject 
 {
@@ -23,12 +24,22 @@ typedef enum RobotColor
    
     GameObject* _collision;
     
-    eRobotColor _color;
+   eRobotColor _robColor;
+   
+   id<RobotDelegate> _delegate;
 }
 
 @property(nonatomic)CGPoint velocity;
 @property(nonatomic)GameObject* collision;
+@property(nonatomic)eRobotColor robColor;
 
 -(void)update:(ccTime)dt;
+
+-(void)setDelegate:(id<RobotDelegate>)delegate;
+
+-(void)runWalk;
+-(void)runDeath;
+
+-(void)deathFinished;
 
 @end

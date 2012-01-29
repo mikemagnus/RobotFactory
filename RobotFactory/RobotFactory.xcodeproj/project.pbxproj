@@ -166,6 +166,7 @@
 		273D512E14D49F0500922477 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		273D513014D4A3FA00922477 /* Ramp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ramp.h; sourceTree = "<group>"; };
 		273D513114D4A3FA00922477 /* Ramp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ramp.m; sourceTree = "<group>"; };
+		273D513B14D4DDBB00922477 /* RobotDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobotDelegate.h; sourceTree = "<group>"; };
 		27FF946B14D3D35C0011C187 /* RobotFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF946F14D3D35C0011C187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27FF947114D3D35C0011C187 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -872,6 +873,7 @@
 				273D510014D442DC00922477 /* GameObject.m */,
 				273D513014D4A3FA00922477 /* Ramp.h */,
 				273D513114D4A3FA00922477 /* Ramp.m */,
+				273D513B14D4DDBB00922477 /* RobotDelegate.h */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
