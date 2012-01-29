@@ -148,6 +148,10 @@
 		50DD92EA14D4EB19006E86E4 /* blueDeath.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92E814D4EB19006E86E4 /* blueDeath.plist */; };
 		50DD92EB14D4EB19006E86E4 /* blueDeath.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92E914D4EB19006E86E4 /* blueDeath.png */; };
 		50DD92ED14D4F17A006E86E4 /* mainMenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92EC14D4F17A006E86E4 /* mainMenu.png */; };
+		50DD92F814D4F314006E86E4 /* robored.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92F614D4F314006E86E4 /* robored.plist */; };
+		50DD92F914D4F314006E86E4 /* robored.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92F714D4F314006E86E4 /* robored.png */; };
+		50DD92FD14D4F362006E86E4 /* redDeath.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92FB14D4F362006E86E4 /* redDeath.plist */; };
+		50DD92FE14D4F362006E86E4 /* redDeath.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92FC14D4F362006E86E4 /* redDeath.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -421,6 +425,10 @@
 		50DD92E814D4EB19006E86E4 /* blueDeath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = blueDeath.plist; sourceTree = "<group>"; };
 		50DD92E914D4EB19006E86E4 /* blueDeath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueDeath.png; sourceTree = "<group>"; };
 		50DD92EC14D4F17A006E86E4 /* mainMenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenu.png; sourceTree = "<group>"; };
+		50DD92F614D4F314006E86E4 /* robored.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = robored.plist; sourceTree = "<group>"; };
+		50DD92F714D4F314006E86E4 /* robored.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robored.png; sourceTree = "<group>"; };
+		50DD92FB14D4F362006E86E4 /* redDeath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = redDeath.plist; sourceTree = "<group>"; };
+		50DD92FC14D4F362006E86E4 /* redDeath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redDeath.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +453,10 @@
 		273D510214D44C1A00922477 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				50DD92FB14D4F362006E86E4 /* redDeath.plist */,
+				50DD92FC14D4F362006E86E4 /* redDeath.png */,
+				50DD92F614D4F314006E86E4 /* robored.plist */,
+				50DD92F714D4F314006E86E4 /* robored.png */,
 				50DD92E814D4EB19006E86E4 /* blueDeath.plist */,
 				50DD92E914D4EB19006E86E4 /* blueDeath.png */,
 				50DD92E014D4E431006E86E4 /* Pause-pressed.png */,
@@ -955,6 +967,10 @@
 				50DD92EA14D4EB19006E86E4 /* blueDeath.plist in Resources */,
 				50DD92EB14D4EB19006E86E4 /* blueDeath.png in Resources */,
 				50DD92ED14D4F17A006E86E4 /* mainMenu.png in Resources */,
+				50DD92F814D4F314006E86E4 /* robored.plist in Resources */,
+				50DD92F914D4F314006E86E4 /* robored.png in Resources */,
+				50DD92FD14D4F362006E86E4 /* redDeath.plist in Resources */,
+				50DD92FE14D4F362006E86E4 /* redDeath.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
