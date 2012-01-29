@@ -11,12 +11,8 @@
 		273D510114D442DD00922477 /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 273D510014D442DC00922477 /* GameObject.m */; };
 		273D510714D44C7600922477 /* robobo.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D510314D44C7600922477 /* robobo.png */; };
 		273D510814D44C7600922477 /* roboboRed.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D510414D44C7600922477 /* roboboRed.png */; };
-		273D512314D49C2300922477 /* Belt.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512214D49C2300922477 /* Belt.png */; };
-		273D512914D49ED700922477 /* Background02.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512414D49ED600922477 /* Background02.png */; };
 		273D512A14D49ED700922477 /* GameAssembler.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512514D49ED600922477 /* GameAssembler.png */; };
 		273D512B14D49ED700922477 /* GameAssemblerMouth.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512614D49ED600922477 /* GameAssemblerMouth.png */; };
-		273D512C14D49ED700922477 /* Gear-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512714D49ED700922477 /* Gear-Overlay.png */; };
-		273D512D14D49ED700922477 /* Background01.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512814D49ED700922477 /* Background01.png */; };
 		273D512F14D49F0700922477 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D512E14D49F0500922477 /* Background.png */; };
 		273D513214D4A3FA00922477 /* Ramp.m in Sources */ = {isa = PBXBuildFile; fileRef = 273D513114D4A3FA00922477 /* Ramp.m */; };
 		273D515014D50D6000922477 /* GameButtonTeslaCoil.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D514D14D50D6000922477 /* GameButtonTeslaCoil.png */; };
@@ -28,6 +24,10 @@
 		273D516314D5973100922477 /* GameGirder.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D516214D5973000922477 /* GameGirder.png */; };
 		273D516614D5980B00922477 /* GameTeslaCoilOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D516414D5980300922477 /* GameTeslaCoilOverlay.png */; };
 		273D516714D5980B00922477 /* GameTeslaCoilZap.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D516514D5980600922477 /* GameTeslaCoilZap.png */; };
+		273D516914D598FF00922477 /* Gear-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D516814D598F100922477 /* Gear-Overlay.png */; };
+		273D516B14D5A04200922477 /* Belt.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D516A14D5A03F00922477 /* Belt.png */; };
+		273D516E14D5A0EB00922477 /* Level-Backgroun01.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D516C14D5A0E600922477 /* Level-Backgroun01.png */; };
+		273D516F14D5A0EB00922477 /* Level-Backgroun02.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D516D14D5A0E800922477 /* Level-Backgroun02.png */; };
 		27FF947014D3D35C0011C187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF946F14D3D35C0011C187 /* QuartzCore.framework */; };
 		27FF947214D3D35C0011C187 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947114D3D35C0011C187 /* OpenGLES.framework */; };
 		27FF947414D3D35C0011C187 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947314D3D35C0011C187 /* OpenAL.framework */; };
@@ -177,12 +177,8 @@
 		273D510014D442DC00922477 /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		273D510314D44C7600922477 /* robobo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robobo.png; sourceTree = "<group>"; };
 		273D510414D44C7600922477 /* roboboRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roboboRed.png; sourceTree = "<group>"; };
-		273D512214D49C2300922477 /* Belt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Belt.png; sourceTree = "<group>"; };
-		273D512414D49ED600922477 /* Background02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background02.png; sourceTree = "<group>"; };
 		273D512514D49ED600922477 /* GameAssembler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameAssembler.png; sourceTree = "<group>"; };
 		273D512614D49ED600922477 /* GameAssemblerMouth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameAssemblerMouth.png; sourceTree = "<group>"; };
-		273D512714D49ED700922477 /* Gear-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gear-Overlay.png"; sourceTree = "<group>"; };
-		273D512814D49ED700922477 /* Background01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background01.png; sourceTree = "<group>"; };
 		273D512E14D49F0500922477 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
 		273D513014D4A3FA00922477 /* Ramp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ramp.h; sourceTree = "<group>"; };
 		273D513114D4A3FA00922477 /* Ramp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ramp.m; sourceTree = "<group>"; };
@@ -196,6 +192,10 @@
 		273D516214D5973000922477 /* GameGirder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameGirder.png; sourceTree = "<group>"; };
 		273D516414D5980300922477 /* GameTeslaCoilOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameTeslaCoilOverlay.png; sourceTree = "<group>"; };
 		273D516514D5980600922477 /* GameTeslaCoilZap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameTeslaCoilZap.png; sourceTree = "<group>"; };
+		273D516814D598F100922477 /* Gear-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gear-Overlay.png"; sourceTree = "<group>"; };
+		273D516A14D5A03F00922477 /* Belt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Belt.png; sourceTree = "<group>"; };
+		273D516C14D5A0E600922477 /* Level-Backgroun01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-Backgroun01.png"; sourceTree = "<group>"; };
+		273D516D14D5A0E800922477 /* Level-Backgroun02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-Backgroun02.png"; sourceTree = "<group>"; };
 		27FF946B14D3D35C0011C187 /* RobotFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF946F14D3D35C0011C187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27FF947114D3D35C0011C187 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -485,6 +485,10 @@
 		273D510214D44C1A00922477 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				273D516C14D5A0E600922477 /* Level-Backgroun01.png */,
+				273D516D14D5A0E800922477 /* Level-Backgroun02.png */,
+				273D516A14D5A03F00922477 /* Belt.png */,
+				273D516814D598F100922477 /* Gear-Overlay.png */,
 				273D516414D5980300922477 /* GameTeslaCoilOverlay.png */,
 				273D516514D5980600922477 /* GameTeslaCoilZap.png */,
 				273D515914D5241800922477 /* TeslaCoil_default.plist */,
@@ -505,12 +509,8 @@
 				50DD92D314D4B52D006E86E4 /* blueWalk.plist */,
 				50DD92D414D4B52D006E86E4 /* blueWalk.png */,
 				273D512E14D49F0500922477 /* Background.png */,
-				273D512414D49ED600922477 /* Background02.png */,
 				273D512514D49ED600922477 /* GameAssembler.png */,
 				273D512614D49ED600922477 /* GameAssemblerMouth.png */,
-				273D512714D49ED700922477 /* Gear-Overlay.png */,
-				273D512814D49ED700922477 /* Background01.png */,
-				273D512214D49C2300922477 /* Belt.png */,
 				273D510314D44C7600922477 /* robobo.png */,
 				273D510414D44C7600922477 /* roboboRed.png */,
 			);
@@ -1007,12 +1007,8 @@
 				27FF949314D3D35C0011C187 /* iTunesArtwork in Resources */,
 				273D510714D44C7600922477 /* robobo.png in Resources */,
 				273D510814D44C7600922477 /* roboboRed.png in Resources */,
-				273D512314D49C2300922477 /* Belt.png in Resources */,
-				273D512914D49ED700922477 /* Background02.png in Resources */,
 				273D512A14D49ED700922477 /* GameAssembler.png in Resources */,
 				273D512B14D49ED700922477 /* GameAssemblerMouth.png in Resources */,
-				273D512C14D49ED700922477 /* Gear-Overlay.png in Resources */,
-				273D512D14D49ED700922477 /* Background01.png in Resources */,
 				273D512F14D49F0700922477 /* Background.png in Resources */,
 				50DD92D514D4B52D006E86E4 /* blueWalk.plist in Resources */,
 				50DD92D614D4B52D006E86E4 /* blueWalk.png in Resources */,
@@ -1043,6 +1039,10 @@
 				273D516314D5973100922477 /* GameGirder.png in Resources */,
 				273D516614D5980B00922477 /* GameTeslaCoilOverlay.png in Resources */,
 				273D516714D5980B00922477 /* GameTeslaCoilZap.png in Resources */,
+				273D516914D598FF00922477 /* Gear-Overlay.png in Resources */,
+				273D516B14D5A04200922477 /* Belt.png in Resources */,
+				273D516E14D5A0EB00922477 /* Level-Backgroun01.png in Resources */,
+				273D516F14D5A0EB00922477 /* Level-Backgroun02.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,11 @@
 {
    Obstacle* _buddy;
    
+   CCSprite* glow;
+   
+   CCSprite* zapRight;
+   CCSprite* zapLeft;
+   
    BOOL _isActive;
 }
 
