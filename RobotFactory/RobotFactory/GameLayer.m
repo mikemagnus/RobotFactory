@@ -227,14 +227,17 @@
          [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98) topActive:YES];
          [self addWallTopPosition:ccp(350,98) bottomPosition:ccp(674,98) topActive:NO];
          [self addWallTopPosition:ccp(674,98) bottomPosition:ccp(350,98) topActive:YES];
-         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
          [_topLayer addRobotToSpawnArray:kRobotColorRed];
+         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
          [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
          break;
       case 3:
          [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98) topActive:YES];
          [_topLayer addRobotToSpawnArray:kRobotColorRed];
+         [_topLayer addRobotToSpawnArray:kRobotColorRed];
          [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
          [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
          [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
          break;
@@ -356,9 +359,9 @@
       pauseOverlay.position = ccp(winSize.width/2, winSize.height/2);
       
       
-      CCMenuItemImage *resumeButton = [CCMenuItemImage itemFromNormalImage:@"ButtonResume.png" selectedImage:@"ButtonResumePressed.png" target:self selector:@selector(resumeGame:)];
+      CCMenuItemImage *resumeButton = [CCMenuItemImage itemFromNormalImage:@"buttonResume.png" selectedImage:@"buttonResumePressed.png" target:self selector:@selector(resumeGame:)];
       resumeButton.scale = 0.5;
-      CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"ButtonMainMenu.png" selectedImage:@"ButtonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
+      CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
       menuButton.scale = 0.5;
       
       CCMenu *pauseMenu = [CCMenu menuWithItems:resumeButton, menuButton, nil];
