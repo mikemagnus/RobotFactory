@@ -9,6 +9,7 @@
 #import "MainMenuScene.h"
 #import "CCLabelTTF.h"
 #import "CCDirector.h"
+#import "SimpleAudioEngine.h"
 #import "GameLayer.h"
 #import "HelloWorldLayer.h"
 
@@ -16,57 +17,53 @@
 
 +(id) scene
 {
-    CCScene *scene = [CCScene node];
-    MainMenuScene *layer = [MainMenuScene node];
-    [scene addChild: layer];
-    return scene;
+   CCScene *scene = [CCScene node];
+   MainMenuScene *layer = [MainMenuScene node];
+   [scene addChild: layer];
+   return scene;
 }
 
 -(id) init
 {
-    if ((self = [super init])) {
-        
-        CCLabelTTF *title = [CCLabelTTF labelWithString:@"Robot Factory" fontName:@"Arial" fontSize:64];
-        title.position = ccp(500, 700);
-        [self addChild: title];
-        
-        CCLayer *menuLayer = [[CCLayer alloc] init];
-        [self addChild:menuLayer];
-        
-        [CCMenuItemFont setFontSize:64];
-        
-        CCMenuItem *menuItem1 = [CCMenuItemFont itemFromString:@"Play" target:self selector:@selector(onPlay:)];
-        CCMenuItem *menuItem2 = [CCMenuItemFont itemFromString:@"Settings" target:self selector:@selector(onHow:)];
-        CCMenuItem *menuItem3 = [CCMenuItemFont itemFromString:@"About" target:self selector:@selector(onAbout:)];
-        
-        //CCMenuItemImage *startButton = [CCMenuItemImage itemFromNormalImage:@"startButton.png" selectedImage:@"startButtonSelected.png" target:self selector:@selector(startGame:)];
-        
-        CCMenu *menu = [CCMenu menuWithItems:menuItem1, menuItem2, menuItem3, nil];
-        [menu alignItemsVertically];
-        [menuLayer addChild: menu];
-        
-    }
-    return self;
+   if ((self = [super init])) {
+      
+      [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robot.mp3" loop:YES];
+      
+      CGSize winSize = [[CCDirector sharedDirector] winSize];
+      CCSprite* background = [CCSprite spriteWithFile:@"mainMenu.png"];
+      background.position = ccp(winSize.width / 2, winSize.height/2);
+      
+      CCLayer *menuLayer = [[CCLayer alloc] init];
+      [self addChild:menuLayer];
+      
+      CCMenuItemImage *startButton = [CCMenuItemImage itemFromNormalImage:@"Play-static.png" selectedImage:@"Play-pressed.png" target:self selector:@selector(onPlay:)];
+      CCMenuItemImage *creditsButton = [CCMenuItemImage itemFromNormalImage:@"Credits-static.png" selectedImage:@"Credits-pressed.png" target:self selector:@selector(onAbout:)];
+      
+      CCMenu *menu = [CCMenu menuWithItems:startButton, creditsButton, nil];
+      [menu alignItemsVerticallyWithPadding:20];
+      menu.position = ccp(600, 100);
+      menu.scale = 0.65;
+      
+      [menuLayer addChild:menu z:Z_FOREGROUND];
+      [menuLayer addChild:background z:Z_BACKGROUND];
+      
+   }
+   return self;
 }
 
 -(void) onPlay: (id) sender
 {
-    [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
-}
-
--(void) onHow: (id) sender
-{
-    NSLog(@"Go to 'how to play' screen");
+   [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
 }
 
 -(void) onAbout: (id) sender
 {
-    [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
+   [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
 }
 
 -(void) dealloc
 {
-    [super dealloc];
+   [super dealloc];
 }
 
 @end

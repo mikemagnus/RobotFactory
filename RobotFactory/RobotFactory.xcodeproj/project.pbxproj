@@ -152,6 +152,11 @@
 		50DD92F914D4F314006E86E4 /* robored.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92F714D4F314006E86E4 /* robored.png */; };
 		50DD92FD14D4F362006E86E4 /* redDeath.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92FB14D4F362006E86E4 /* redDeath.plist */; };
 		50DD92FE14D4F362006E86E4 /* redDeath.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92FC14D4F362006E86E4 /* redDeath.png */; };
+		50DD930314D4F581006E86E4 /* Credits-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92FF14D4F581006E86E4 /* Credits-pressed.png */; };
+		50DD930414D4F581006E86E4 /* Credits-static.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD930014D4F581006E86E4 /* Credits-static.png */; };
+		50DD930514D4F581006E86E4 /* Play-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD930114D4F581006E86E4 /* Play-pressed.png */; };
+		50DD930614D4F581006E86E4 /* Play-static.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD930214D4F581006E86E4 /* Play-static.png */; };
+		50DD930E14D504AD006E86E4 /* Robot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DD930D14D504AD006E86E4 /* Robot.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -429,6 +434,11 @@
 		50DD92F714D4F314006E86E4 /* robored.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = robored.png; sourceTree = "<group>"; };
 		50DD92FB14D4F362006E86E4 /* redDeath.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = redDeath.plist; sourceTree = "<group>"; };
 		50DD92FC14D4F362006E86E4 /* redDeath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redDeath.png; sourceTree = "<group>"; };
+		50DD92FF14D4F581006E86E4 /* Credits-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credits-pressed.png"; sourceTree = "<group>"; };
+		50DD930014D4F581006E86E4 /* Credits-static.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Credits-static.png"; sourceTree = "<group>"; };
+		50DD930114D4F581006E86E4 /* Play-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play-pressed.png"; sourceTree = "<group>"; };
+		50DD930214D4F581006E86E4 /* Play-static.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play-static.png"; sourceTree = "<group>"; };
+		50DD930D14D504AD006E86E4 /* Robot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Robot.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -536,6 +546,11 @@
 		27FF948014D3D35C0011C187 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50DD930D14D504AD006E86E4 /* Robot.mp3 */,
+				50DD92FF14D4F581006E86E4 /* Credits-pressed.png */,
+				50DD930014D4F581006E86E4 /* Credits-static.png */,
+				50DD930114D4F581006E86E4 /* Play-pressed.png */,
+				50DD930214D4F581006E86E4 /* Play-static.png */,
 				50DD92EC14D4F17A006E86E4 /* mainMenu.png */,
 				273D510214D44C1A00922477 /* Gameplay */,
 				27FF948114D3D35C0011C187 /* Default.png */,
@@ -971,6 +986,11 @@
 				50DD92F914D4F314006E86E4 /* robored.png in Resources */,
 				50DD92FD14D4F362006E86E4 /* redDeath.plist in Resources */,
 				50DD92FE14D4F362006E86E4 /* redDeath.png in Resources */,
+				50DD930314D4F581006E86E4 /* Credits-pressed.png in Resources */,
+				50DD930414D4F581006E86E4 /* Credits-static.png in Resources */,
+				50DD930514D4F581006E86E4 /* Play-pressed.png in Resources */,
+				50DD930614D4F581006E86E4 /* Play-static.png in Resources */,
+				50DD930E14D504AD006E86E4 /* Robot.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
