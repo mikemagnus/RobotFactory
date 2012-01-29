@@ -83,12 +83,12 @@
        [self loadAnimations];
        
        [_topLayer addRobotToSpawnArray:kRobotColorRed];
-       [_topLayer addRobotToSpawnArray:kRobotColorBlue];
-       [_topLayer addRobotToSpawnArray:kRobotColorRed];
+       //[_topLayer addRobotToSpawnArray:kRobotColorBlue];
+       //[_topLayer addRobotToSpawnArray:kRobotColorRed];
        
        [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
-       [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
-       [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
+       //[_bottomLayer addRobotToSpawnArray:kRobotColorRed];
+       //[_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
        
        Obstacle* ob = [Obstacle spriteWithSpriteFrameName:@"GameTeslaCoil1.png"];
        ob.position = ccp(winSize.width/2,-37 + 120);
@@ -182,6 +182,15 @@
 {
    [_topLayer update:dt];
    [_bottomLayer update:dt];
+   if ([_topLayer spawnQueueEmpty] && [_bottomLayer spawnQueueEmpty] && [_topLayer allSameColor:kRobotColorRed] && [_bottomLayer allSameColor:kRobotColorBlue]) {
+      [self winGame];
+   }
+}
+
+-(void)winGame
+{
+   [self unscheduleUpdate];
+   [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"RobotVictory.mp3"];
 }
 
 -(void)pauseGame: (id) sender
