@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "GameObject.h"
 
-@interface Wall : GameObject 
+@interface Wall : GameObject <CCTargetedTouchDelegate>
 {
    Wall* _buddy;
    BOOL _isActive;

@@ -11,6 +11,7 @@
 #import "GameObject.h"
 #import "Robot.h"
 #import "Obstacle.h"
+#import "Wall.h"
 
 #import "SimpleAudioEngine.h"
 
@@ -27,6 +28,7 @@
       _robots = [[CCArray alloc] initWithCapacity:6];
       _touchables = [[CCArray alloc] initWithCapacity:10];
       _staticObjects = [[CCArray alloc] initWithCapacity:10];
+      _walls = [[CCArray alloc] initWithCapacity:10];
       _spawnArray = [[CCArray alloc] initWithCapacity:5];
       
       _spawnPoint = ccp(winSize.width - 80,-37 + 100);
@@ -53,6 +55,11 @@
 -(void)addObstacleToCollision:(Obstacle*)obstacle
 {
    [_touchables addObject:obstacle];
+}
+
+-(void)addWallToCollision:(Wall *)wall
+{
+   [_walls addObject:wall];
 }
 
 -(void)addObstacleAtPosition:(CGPoint)point
@@ -151,10 +158,14 @@
                   [rob runDeath];
                   //Do more complex collision
                }
-               else
+               else if(obj.type == kGamePlatform)
                {
                   rob.velocity = ccp(rob.velocity.x + 40.0f, 0.0f);
                   rob.position = ccp(rob.position.x, obj.collisionRect.origin.y + rob.contentSize.height);
+               }
+               else if(obj.type == kGameWall)
+               {
+                  [rob setFlipX:!rob.flipX];
                }
             }
          }
@@ -178,7 +189,7 @@
                   //               Obstacle* obstacle = (Obstacle*) obj;
                   [rob runDeath];
                }
-               else
+               else if (obj.type == kGameWall)
                {
                   [rob setFlipX:!rob.flipX];
                }
@@ -222,6 +233,19 @@
          if(nil == collisions)
             collisions = [[CCArray alloc] initWithCapacity:3];
          [collisions addObject:ob];
+      }
+   }
+   
+   Wall* wall;
+   CCARRAY_FOREACH(_walls, wall)
+   {
+      CGRect r2 = [wall boundingBox];
+      r2.size = CGSizeMake(r2.size.width/2, r2.size.height);
+      if(CGRectIntersectsRect(r1,r2) && wall.isActive)
+      {
+         if(nil == collisions)
+            collisions = [[CCArray alloc] initWithCapacity:3];
+         [collisions addObject:wall];
       }
    }
    return collisions;

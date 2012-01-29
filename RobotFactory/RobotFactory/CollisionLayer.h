@@ -13,6 +13,7 @@
 
 @class GameObject;
 @class Obstacle;
+@class Wall;
 
 @interface CollisionLayer : CCLayer <RobotDelegate>
 {
@@ -20,6 +21,7 @@
    CCArray* _robots;
    CCArray* _touchables;
    CCArray* _staticObjects; 
+   CCArray* _walls;
    
    CGPoint _spawnPoint;
    
@@ -37,6 +39,7 @@
 
 -(void)addGameObjectToCollision:(GameObject*)collision;
 -(void)addObstacleToCollision:(Obstacle*)obstacle;
+-(void)addWallToCollision:(Wall*)wall;
 -(void)cleanupRobotDeath:(Robot*)robot;
 -(void)addRobotToSpawnArray:(eRobotColor)color;
 -(void)spawnRobot:(eRobotColor)color;

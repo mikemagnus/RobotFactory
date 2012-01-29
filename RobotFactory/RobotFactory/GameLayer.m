@@ -12,6 +12,7 @@
 #import "Obstacle.h"
 #import "MainMenuScene.h"
 #import "LevelSelectScene.h"
+#import "Wall.h"
 
 @implementation GameLayer
 
@@ -106,6 +107,21 @@
        [_topLayer addChild:ob z:1];
        [_bottomLayer addObstacleToCollision:ob2];
        [_bottomLayer addChild:ob2 z:1];
+       
+       Wall* wall = [Wall spriteWithSpriteFrameName:@"GameWall1.png"];
+       wall.position = ccp(winSize.width/2 + 100, -37 + 120);
+       Wall* wall2 = [Wall spriteWithSpriteFrameName:@"GameWall2.png"];
+       wall2.position = ccp(winSize.width/2 + 100, -37 + 120);
+       
+       wall.buddy = wall2;
+       wall2.buddy = wall;
+       wall.isActive = NO;
+       wall2.isActive = YES;
+       
+       [_topLayer addObstacleToCollision:wall];
+       [_topLayer addChild:wall z:1];
+       [_bottomLayer addObstacleToCollision:wall2];
+       [_bottomLayer addChild:wall2 z:1];
        
        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robobo_ingame_music.caf" loop:YES];
        
@@ -269,9 +285,9 @@
 
 -(void)loadAnimations
 {
-   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", @"blueDeath", @"redDeath",@"TeslaCoil_default", nil];
-   int numFrames[6] = {32,32,38,38,3,40};
-   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", @"RoboBlueDeath_%02d.png", @"RoboRedDeath_%02d.png",@"GameTeslaCoil%d.png", nil];
+   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", @"blueDeath", @"redDeath",@"TeslaCoil_default",@"GameWall_default", nil];
+   int numFrames[6] = {32,32,38,38,3,2};
+   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", @"RoboBlueDeath_%02d.png", @"RoboRedDeath_%02d.png",@"GameTeslaCoil%d.png",@"GameWall%d.png", nil];
    
    for (int i=0; i<[files count]; i++) {
       NSString* file = [files objectAtIndex:i];
@@ -280,7 +296,7 @@
       [self addChild:spriteSheet];
       NSMutableArray *frames = [NSMutableArray array];
       for (int j=0; j<=numFrames[i]; j++) {
-         if(i != 4)
+         if(i < 4)
             [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:[frameNames objectAtIndex:i], j]]];
          else
             [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:[frameNames objectAtIndex:i], j + 1]]];
@@ -291,21 +307,30 @@
       
    }
    [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", @"roboredWin"]];
+   [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:[NSString stringWithFormat:@"%@.plist", @"roboblueWin"]];
    CCSpriteBatchNode *spriteSheet = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png",@"roboredWin"]];
+   CCSpriteBatchNode *spriteSheet2 = [CCSpriteBatchNode batchNodeWithFile:[NSString stringWithFormat:@"%@.png",@"roboblueWin"]];
    [self addChild:spriteSheet];
+   [self addChild:spriteSheet2];
+   
    NSMutableArray *frames = [NSMutableArray array];
+   NSMutableArray *frames2 = [NSMutableArray array];
    for (int j=0; j<28; j++) {
       [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"RoboRedWin_%02d.png", j]]];
+      [frames2 addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"RoboBlueWin_%02d.png", j]]];
    }
    for (int i=0; i<3;i++)
    {
       for (int j=28; j<=40;j++)
       {
          [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"RoboRedWin_%02d.png", j]]];
+         [frames2 addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:@"RoboBlueWin_%02d.png", j]]];
       }
    }
    CCAnimation *anim = [CCAnimation animationWithFrames:frames delay:ANIMATION_DELAY];
+   CCAnimation *anim2 = [CCAnimation animationWithFrames:frames2 delay:ANIMATION_DELAY];
    [[CCAnimationCache sharedAnimationCache] addAnimation:anim name:@"roboredWin"]; 
+   [[CCAnimationCache sharedAnimationCache] addAnimation:anim2 name:@"roboblueWin"];
    
 }
 

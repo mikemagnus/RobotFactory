@@ -87,8 +87,7 @@
    }
    else if(_robColor == kRobotColorBlue)
    {
-      return;
-//      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"roboblueWin"];
+      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"roboblueWin"];
    }
    [self runAction:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]];
 }

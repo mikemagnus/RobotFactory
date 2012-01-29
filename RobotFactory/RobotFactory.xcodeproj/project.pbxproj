@@ -38,6 +38,10 @@
 		273D519514D5BF4F00922477 /* TeslaCoil_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 273D519314D5BF4F00922477 /* TeslaCoil_default.plist */; };
 		273D519614D5BF4F00922477 /* TeslaCoil_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D519414D5BF4F00922477 /* TeslaCoil_default.png */; };
 		273D51A014D5CD3100922477 /* Wall.m in Sources */ = {isa = PBXBuildFile; fileRef = 273D519F14D5CD3100922477 /* Wall.m */; };
+		273D51A414D5CFB100922477 /* GameWall_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D51A214D5CFB000922477 /* GameWall_default.png */; };
+		273D51A514D5CFB100922477 /* GameWall_default.plist in Resources */ = {isa = PBXBuildFile; fileRef = 273D51A314D5CFB100922477 /* GameWall_default.plist */; };
+		273D51A814D5D1A300922477 /* roboblueWin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 273D51A614D5D1A300922477 /* roboblueWin.plist */; };
+		273D51A914D5D1A300922477 /* roboblueWin.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D51A714D5D1A300922477 /* roboblueWin.png */; };
 		27FF947014D3D35C0011C187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF946F14D3D35C0011C187 /* QuartzCore.framework */; };
 		27FF947214D3D35C0011C187 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947114D3D35C0011C187 /* OpenGLES.framework */; };
 		27FF947414D3D35C0011C187 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947314D3D35C0011C187 /* OpenAL.framework */; };
@@ -249,6 +253,10 @@
 		273D519414D5BF4F00922477 /* TeslaCoil_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TeslaCoil_default.png; sourceTree = "<group>"; };
 		273D519E14D5CD3100922477 /* Wall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wall.h; sourceTree = "<group>"; };
 		273D519F14D5CD3100922477 /* Wall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wall.m; sourceTree = "<group>"; };
+		273D51A214D5CFB000922477 /* GameWall_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GameWall_default.png; sourceTree = "<group>"; };
+		273D51A314D5CFB100922477 /* GameWall_default.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GameWall_default.plist; sourceTree = "<group>"; };
+		273D51A614D5D1A300922477 /* roboblueWin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = roboblueWin.plist; sourceTree = "<group>"; };
+		273D51A714D5D1A300922477 /* roboblueWin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roboblueWin.png; sourceTree = "<group>"; };
 		27FF946B14D3D35C0011C187 /* RobotFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF946F14D3D35C0011C187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27FF947114D3D35C0011C187 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -571,6 +579,10 @@
 		273D510214D44C1A00922477 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				273D51A614D5D1A300922477 /* roboblueWin.plist */,
+				273D51A714D5D1A300922477 /* roboblueWin.png */,
+				273D51A214D5CFB000922477 /* GameWall_default.png */,
+				273D51A314D5CFB100922477 /* GameWall_default.plist */,
 				273D519314D5BF4F00922477 /* TeslaCoil_default.plist */,
 				273D519414D5BF4F00922477 /* TeslaCoil_default.png */,
 				273D518914D5BBB800922477 /* roboredWin.png */,
@@ -1221,6 +1233,10 @@
 				5085976714D5C2BF00046806 /* buttonMainMenuPressed.png in Resources */,
 				5085976814D5C2BF00046806 /* buttonResume.png in Resources */,
 				5085976914D5C2BF00046806 /* buttonResumePressed.png in Resources */,
+				273D51A414D5CFB100922477 /* GameWall_default.png in Resources */,
+				273D51A514D5CFB100922477 /* GameWall_default.plist in Resources */,
+				273D51A814D5D1A300922477 /* roboblueWin.plist in Resources */,
+				273D51A914D5D1A300922477 /* roboblueWin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
