@@ -10,7 +10,12 @@
 #import "cocos2d.h"
 #import "GameObject.h"
 
-
+typedef enum RampState
+{
+   kRampStateRight,
+   kRampStateLeft,
+   kRampStateMoving
+}eRampState;
 
 @interface Ramp : GameObject 
 {

@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Robot.h"
+#import "RobotDelegate.h"
 
 @class GameObject;
-@class Robot;
 
-@interface CollisionLayer : CCLayer 
+@interface CollisionLayer : CCLayer <RobotDelegate>
 {
+   CCArray* _spawnArray;
    CCArray* _robots;
    CCArray* _touchables;
    CCArray* _staticObjects; 
@@ -25,6 +26,7 @@
 }
 
 -(void)addGameObjectToCollision:(GameObject*)collision;
+-(void)addRobotToSpawnArray:(eRobotColor)color;
 -(void)spawnRobot:(eRobotColor)color;
 
 -(void)update:(ccTime)dt;

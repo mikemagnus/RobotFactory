@@ -24,6 +24,16 @@
    return self;
 }
 
+-(void)runWalk
+{
+   
+}
+
+-(void)runDeath
+{
+   
+}
+
 -(void)update:(ccTime)dt
 {
   

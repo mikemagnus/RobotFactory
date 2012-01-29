@@ -49,6 +49,8 @@
        
 //       [_topLayer addGameObjectToCollision:base];
        
+       _assembler = [CCSprite spriteWithFile:@"GameAssembler.png"];
+       
        CCSprite* foreground = [CCSprite spriteWithFile:@"Gear-Overlay.png"];
        foreground.position = ccp(winSize.width / 2, winSize.height/2);
        
@@ -63,6 +65,21 @@
     }
     return self;
 }
+
+-(void)robotDied:(Robot *)robot onSide:(CollisionLayer *)side
+{
+   if( side == _topLayer)
+   {
+      
+   }
+   else
+   {
+      
+   }
+   [side removeChild:robot cleanup:YES];
+}
+
+
 
 -(void)registerWithTouchDispatcher
 {

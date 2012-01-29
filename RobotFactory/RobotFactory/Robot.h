@@ -23,12 +23,18 @@ typedef enum RobotColor
    
     GameObject* _collision;
     
-    eRobotColor _color;
+   eRobotColor _robColor;
 }
 
 @property(nonatomic)CGPoint velocity;
 @property(nonatomic)GameObject* collision;
+@property(nonatomic)eRobotColor robColor;
 
 -(void)update:(ccTime)dt;
+
+-(void)runWalk;
+-(void)runDeath;
+
+-(void)deathFinished;
 
 @end

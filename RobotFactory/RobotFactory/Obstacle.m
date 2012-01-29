@@ -7,6 +7,7 @@
 //
 
 #import "Obstacle.h"
+#import "Robot.h"
 
 
 @implementation Obstacle
@@ -19,6 +20,13 @@
    }
    return self;
 }
+
+-(void)didCollideWithRobot:(Robot*)robot
+{
+   [robot runDeath];
+   
+}
+
 -(void)onEnterTransitionDidFinish
 {
    [super onEnterTransitionDidFinish];
