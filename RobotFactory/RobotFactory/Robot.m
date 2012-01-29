@@ -59,11 +59,22 @@
 {
    //Run the death animation
    //Run in sequence to call deathFinished once complete
+   CCAnimation* animation;
+   if(_robColor == kRobotColorRed)
+   {
+      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"redDeath"];
+   }
+   else if(_robColor == kRobotColorBlue)
+   {
+      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"blueDeath"];
+   }
+   [self runAction:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]];
 }
 
 -(void)deathFinished
 {
-   //Trigger Cleanup Animation
+   //Fade/remove
+   //Add to opposite side
 }
 
 -(void)update:(ccTime)dt

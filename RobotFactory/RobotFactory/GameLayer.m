@@ -127,17 +127,6 @@
    _bottomLayer.spawning = NO;
 }
 
-/*-(void)startSpawn
-{
-   [_assembler runAction:[CCSequence actions:[CCMoveTo actionWithDuration:0.75f position:ccp(_spawnPoint.x,300.0)],[CCCallFunc actionWithTarget:self selector:@selector(spawnTwo)], nil]];
-}
-
--(void)spawnTwo
-{
-   [_assembler runAction:[CCSequence actions:[CCMoveTo actionWithDuration:0.25f position:ccp(_spawnPoint.x,310.0f)],[CCCallFunc actionWithTarget:self selector:@selector(spawnRobot)],[CCDelayTime actionWithDuration:0.5f],[CCMoveTo actionWithDuration:0.5f position:ccp(_spawnPoint.x,_spawnPoint.y + 500)],nil]];
-   [_assemblerMouth runAction:[CCSequence actions:[CCMoveBy actionWithDuration:0.25f position:ccp(0.0f,-100.0f)],[CCDelayTime actionWithDuration:0.5f],[CCMoveBy actionWithDuration:0.25f position:ccp(0.0f,100.0f)], nil]];
-}*/
-
 
 -(void)robotDied:(Robot *)robot onSide:(CollisionLayer *)side
 {
