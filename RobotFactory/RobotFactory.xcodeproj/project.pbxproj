@@ -28,6 +28,13 @@
 		273D516E14D5A0EB00922477 /* Level-Backgroun01.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D516C14D5A0E600922477 /* Level-Backgroun01.png */; };
 		273D516F14D5A0EB00922477 /* Level-Backgroun02.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D516D14D5A0E800922477 /* Level-Backgroun02.png */; };
 		273D517614D5A8B400922477 /* Belt.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D517514D5A8B400922477 /* Belt.png */; };
+		273D517E14D5AEBA00922477 /* conveyor_belt_loop.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517714D5AEB900922477 /* conveyor_belt_loop.caf */; };
+		273D517F14D5AEBA00922477 /* moving_wall.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517814D5AEB900922477 /* moving_wall.caf */; };
+		273D518014D5AEBA00922477 /* Robobo_ingame_music.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517914D5AEB900922477 /* Robobo_ingame_music.caf */; };
+		273D518114D5AEBA00922477 /* robot_die.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517A14D5AEB900922477 /* robot_die.caf */; };
+		273D518214D5AEBA00922477 /* robot_egg_hatch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517B14D5AEBA00922477 /* robot_egg_hatch.caf */; };
+		273D518314D5AEBA00922477 /* robot_gui_menu.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517C14D5AEBA00922477 /* robot_gui_menu.caf */; };
+		273D518414D5AEBA00922477 /* robot_hit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517D14D5AEBA00922477 /* robot_hit.caf */; };
 		27FF947014D3D35C0011C187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF946F14D3D35C0011C187 /* QuartzCore.framework */; };
 		27FF947214D3D35C0011C187 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947114D3D35C0011C187 /* OpenGLES.framework */; };
 		27FF947414D3D35C0011C187 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947314D3D35C0011C187 /* OpenAL.framework */; };
@@ -203,6 +210,13 @@
 		273D516C14D5A0E600922477 /* Level-Backgroun01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-Backgroun01.png"; sourceTree = "<group>"; };
 		273D516D14D5A0E800922477 /* Level-Backgroun02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level-Backgroun02.png"; sourceTree = "<group>"; };
 		273D517514D5A8B400922477 /* Belt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Belt.png; sourceTree = "<group>"; };
+		273D517714D5AEB900922477 /* conveyor_belt_loop.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = conveyor_belt_loop.caf; sourceTree = "<group>"; };
+		273D517814D5AEB900922477 /* moving_wall.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = moving_wall.caf; sourceTree = "<group>"; };
+		273D517914D5AEB900922477 /* Robobo_ingame_music.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Robobo_ingame_music.caf; sourceTree = "<group>"; };
+		273D517A14D5AEB900922477 /* robot_die.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_die.caf; sourceTree = "<group>"; };
+		273D517B14D5AEBA00922477 /* robot_egg_hatch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_egg_hatch.caf; sourceTree = "<group>"; };
+		273D517C14D5AEBA00922477 /* robot_gui_menu.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_gui_menu.caf; sourceTree = "<group>"; };
+		273D517D14D5AEBA00922477 /* robot_hit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_hit.caf; sourceTree = "<group>"; };
 		27FF946B14D3D35C0011C187 /* RobotFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF946F14D3D35C0011C187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27FF947114D3D35C0011C187 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -596,6 +610,13 @@
 		27FF948014D3D35C0011C187 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				273D517714D5AEB900922477 /* conveyor_belt_loop.caf */,
+				273D517814D5AEB900922477 /* moving_wall.caf */,
+				273D517914D5AEB900922477 /* Robobo_ingame_music.caf */,
+				273D517A14D5AEB900922477 /* robot_die.caf */,
+				273D517B14D5AEBA00922477 /* robot_egg_hatch.caf */,
+				273D517C14D5AEBA00922477 /* robot_gui_menu.caf */,
+				273D517D14D5AEBA00922477 /* robot_hit.caf */,
 				50DD932514D52666006E86E4 /* Overlay */,
 				273D516214D5973000922477 /* GameGirder.png */,
 				273D515F14D5473500922477 /* GameGirder2.png */,
@@ -1079,6 +1100,13 @@
 				50DD933314D52678006E86E4 /* Level05-Overlay.png in Resources */,
 				50DD933414D52678006E86E4 /* Paused-overlay.png in Resources */,
 				273D517614D5A8B400922477 /* Belt.png in Resources */,
+				273D517E14D5AEBA00922477 /* conveyor_belt_loop.caf in Resources */,
+				273D517F14D5AEBA00922477 /* moving_wall.caf in Resources */,
+				273D518014D5AEBA00922477 /* Robobo_ingame_music.caf in Resources */,
+				273D518114D5AEBA00922477 /* robot_die.caf in Resources */,
+				273D518214D5AEBA00922477 /* robot_egg_hatch.caf in Resources */,
+				273D518314D5AEBA00922477 /* robot_gui_menu.caf in Resources */,
+				273D518414D5AEBA00922477 /* robot_hit.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

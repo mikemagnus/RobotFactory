@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "GameObject.h"
+#import "Robot.h"
 
 @interface Obstacle : GameObject <CCTargetedTouchDelegate>
 {
@@ -24,5 +25,7 @@
 
 @property(nonatomic,assign)Obstacle* buddy;
 @property(nonatomic,setter = setIsActive:)BOOL isActive;
+
+-(void)didCollideWithRobot:(Robot*)robot;
 
 @end

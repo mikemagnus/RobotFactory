@@ -58,9 +58,9 @@
    
 }
 
--(void)robotDied:(Robot *)robot
+-(void)removeRobot:(Robot *)robot
 {
-   
+   [_robots removeObject:robot];
 }
 
 -(void)addRobotToSpawnArray:(eRobotColor)color
@@ -134,7 +134,8 @@
             {
                if(obj.type == kGameObstacle)
                {
-                  //               Obstacle* obstacle = (Obstacle*) obj;
+                  Obstacle* obstacle = (Obstacle*) obj;
+                  [obj didCollideWithRobot:rob];
                   [rob runDeath];
                   //Do more complex collision
                }

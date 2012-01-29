@@ -24,6 +24,15 @@
       self.visible = NO;
       glow = [CCSprite spriteWithFile:@"GameTeslaCoilOverlay.png"];
       glow.position = ccp(40,125);
+      zapLeft = [CCSprite spriteWithFile:@"GameTeslaCoilZap.png"];
+      zapRight = [CCSprite spriteWithFile:@"GameTeslaCoilZap.png"];
+      zapLeft.position = ccp(20,130);
+      zapRight.position = ccp(40,130);
+      [zapRight setFlipX:YES];
+      zapLeft.visible = NO;
+      zapRight.visible = NO;
+      [self addChild:zapLeft];
+      [self addChild:zapRight];
       [self addChild:glow];
    }
    return self;
@@ -33,13 +42,13 @@
 {
    if(robot.position.x > position_.x)
    {
-      
+      [zapRight runAction:[CCSequence actions:[CCToggleVisibility action],[CCDelayTime actionWithDuration:0.1f],[CCToggleVisibility action],nil]];
    }
    else
    {
-      
+      [zapLeft runAction:[CCSequence actions:[CCToggleVisibility action],[CCDelayTime actionWithDuration:0.1f],[CCToggleVisibility action],nil]];
    }
-   [robot runDeath];
+//   [robot runDeath];
 }
 
 -(void)setIsActive:(BOOL)isActive

@@ -163,10 +163,12 @@
    if( robot.parent == _topLayer)
    {
       [_bottomLayer addRobotToSpawnArray:robot.robColor];
+      [_topLayer removeRobot:robot];
    }
    else
    {
       [_topLayer addRobotToSpawnArray:robot.robColor];
+      [_bottomLayer removeRobot:robot];
    }
    [robot removeFromParentAndCleanup:YES];
 }
