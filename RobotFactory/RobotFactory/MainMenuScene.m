@@ -28,6 +28,7 @@
    if ((self = [super init])) {
       
       [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robot.mp3" loop:YES];
+      [[CDAudioManager sharedManager] setResignBehavior:kAMRBStopPlay autoHandle:YES];
       
       CGSize winSize = [[CCDirector sharedDirector] winSize];
       
@@ -68,10 +69,10 @@
       creditsMoving = YES;
       if (creditsOpen) {
          creditsOpen = NO;
-         [credits runAction:[CCSequence actions:[CCMoveBy actionWithDuration:0.5 position:ccp(660, 0)], [CCCallFunc actionWithTarget:self selector:@selector(setCreditsNotMoving)], nil]];
+         [credits runAction:[CCSequence actions:[CCMoveBy actionWithDuration:0.2 position:ccp(-50, 0)],[CCMoveBy actionWithDuration:0.5 position:ccp(710, 0)], [CCCallFunc actionWithTarget:self selector:@selector(setCreditsNotMoving)], nil]];
       } else {
          creditsOpen = YES;
-         [credits runAction:[CCSequence actions:[CCMoveBy actionWithDuration:0.5 position:ccp(-660, 0)], [CCCallFunc actionWithTarget:self selector:@selector(setCreditsNotMoving)], nil]];
+         [credits runAction:[CCSequence actions:[CCMoveBy actionWithDuration:0.5 position:ccp(-710, 0)],[CCMoveBy actionWithDuration:0.2 position:ccp(50, 0)], [CCCallFunc actionWithTarget:self selector:@selector(setCreditsNotMoving)], nil]];
       }
    }
 }

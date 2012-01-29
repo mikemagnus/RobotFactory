@@ -27,6 +27,10 @@
    CCSprite* _topAssemblerJaw;
    CCSprite* _bottomAssembler;
    CCSprite* _bottomAssemblerJaw;
+   
+   BOOL gamePaused;
+   CCSprite* pauseOverlay;
+   CCMenuItemImage *pauseButton;
 }
 
 +(id) scene;
