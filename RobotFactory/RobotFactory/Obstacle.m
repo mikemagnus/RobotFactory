@@ -22,12 +22,23 @@
       _type = kGameObstacle;
       _isActive = NO;
       self.visible = NO;
+      glow = [CCSprite spriteWithFile:@"GameTeslaCoilOverlay.png"];
+      glow.position = ccp(40,125);
+      [self addChild:glow];
    }
    return self;
 }
 
 -(void)didCollideWithRobot:(Robot*)robot
 {
+   if(robot.position.x > position_.x)
+   {
+      
+   }
+   else
+   {
+      
+   }
    [robot runDeath];
 }
 
@@ -39,6 +50,8 @@
    CCAnimation* anim = [[CCAnimationCache sharedAnimationCache] animationByName:@"TeslaCoil_default"];
    if(!isActive)
    {
+      [glow stopAllActions];
+      glow.visible = NO;
       [self runAction:[CCSequence actions:[CCAnimate actionWithAnimation:anim restoreOriginalFrame:NO],[CCCallFunc actionWithTarget:self selector:@selector(doneAnim)],nil]];
    }
    else
@@ -58,6 +71,8 @@
    else
    {
       [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"GameTeslaCoil1.png"]];
+      glow.visible = YES;
+      [glow runAction:[CCRepeatForever actionWithAction:[CCSequence actions:[CCFadeIn actionWithDuration:1.0f],[CCFadeOut actionWithDuration:1.0f], nil]]];
    }
 }
 
@@ -70,7 +85,6 @@
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
    CGPoint tp = [self convertTouchToNodeSpace:touch];
-   NSLog(@"TP: %@ Rect: %@",NSStringFromCGPoint(tp),NSStringFromCGRect([self boundingBox]));
    if(CGRectContainsPoint([self textureRect], tp))
    {
       if(touch.tapCount == 1)
