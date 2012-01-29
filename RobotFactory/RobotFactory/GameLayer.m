@@ -118,9 +118,9 @@
        wall.isActive = NO;
        wall2.isActive = YES;
        
-       [_topLayer addObstacleToCollision:wall];
+       [_topLayer addWallToCollision:wall];
        [_topLayer addChild:wall z:1];
-       [_bottomLayer addObstacleToCollision:wall2];
+       [_bottomLayer addWallToCollision:wall2];
        [_bottomLayer addChild:wall2 z:1];
        
        [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robobo_ingame_music.caf" loop:YES];
@@ -138,6 +138,42 @@
        
     }
     return self;
+}
+
+-(void)addTeslaTopPosistion:(CGPoint)topPos bottomPosition:(CGPoint)botPos
+{
+   Obstacle* ob = [Obstacle spriteWithSpriteFrameName:@"GameTeslaCoil1.png"];
+   ob.position = topPos;
+   //       ob.collisionRect = ob.boundingBox;
+   Obstacle* ob2 = [Obstacle spriteWithSpriteFrameName:@"GameTeslaCoil1.png"];
+   ob2.position = botPos;
+   
+   ob.buddy = ob2;
+   ob2.buddy = ob;
+   ob.isActive = YES;
+   ob2.isActive = NO;
+   [_topLayer addObstacleToCollision:ob];
+   [_topLayer addChild:ob z:1];
+   [_bottomLayer addObstacleToCollision:ob2];
+   [_bottomLayer addChild:ob2 z:1];
+}
+
+-(void)addWallTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos
+{
+   Wall* wall = [Wall spriteWithSpriteFrameName:@"GameWall1.png"];
+   wall.position = topPos;
+   Wall* wall2 = [Wall spriteWithSpriteFrameName:@"GameWall1.png"];
+   wall2.position = botPos;
+   
+   wall.buddy = wall2;
+   wall2.buddy = wall;
+   wall.isActive = NO;
+   wall2.isActive = YES;
+   
+   [_topLayer addWallToCollision:wall];
+   [_topLayer addChild:wall z:1];
+   [_bottomLayer addWallToCollision:wall2];
+   [_bottomLayer addChild:wall2 z:1];
 }
 
 -(void)setupLevel:(int)level

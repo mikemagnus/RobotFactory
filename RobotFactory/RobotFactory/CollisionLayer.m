@@ -165,7 +165,7 @@
                }
                else if(obj.type == kGameWall)
                {
-                  [rob setFlipX:!rob.flipX];
+                  //[rob setFlipX:!rob.flipX];
                }
             }
          }
@@ -189,9 +189,19 @@
                   //               Obstacle* obstacle = (Obstacle*) obj;
                   [rob runDeath];
                }
-               else if (obj.type == kGameWall)
+               else if(obj.type == kGameWall)
                {
                   [rob setFlipX:!rob.flipX];
+                  if(rob.flipX)
+                  {
+                     CGRect intersection = CGRectIntersection([rob boundingBox], [obj boundingBox]);
+                     rob.position = ccp(rob.position.x - intersection.size.width / 2,rob.position.y);
+                  }
+                  else
+                  {
+                     CGRect intersection = CGRectIntersection([rob boundingBox], [obj boundingBox]);
+                     rob.position = ccp(rob.position.x + intersection.size.width / 2,rob.position.y);
+                  }
                }
             }
          }
@@ -243,6 +253,7 @@
       r2.size = CGSizeMake(r2.size.width/2, r2.size.height);
       if(CGRectIntersectsRect(r1,r2) && wall.isActive)
       {
+         NSLog(@"Wall Hit");
          if(nil == collisions)
             collisions = [[CCArray alloc] initWithCapacity:3];
          [collisions addObject:wall];
