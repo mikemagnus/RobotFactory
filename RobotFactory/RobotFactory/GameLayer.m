@@ -10,6 +10,7 @@
 #import "GameLayer.h"
 #import "GameObject.h"
 #import "Obstacle.h"
+#import "MainMenuScene.h"
 
 @implementation GameLayer
 
@@ -222,24 +223,29 @@
       gamePaused = YES;
       pauseButton.visible = NO;
       
-      [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
       [[CCDirector sharedDirector] pause];
+      
       CGSize winSize = [[CCDirector sharedDirector] winSize];
+      
       pauseOverlay = [CCSprite spriteWithFile:@"Paused-overlay.png"];
       pauseOverlay.position = ccp(winSize.width/2, winSize.height/2);
       
       
-      /*CCMenuItemImage *pauseButton = [CCMenuItemImage itemFromNormalImage:@"Pause-static.png" selectedImage:@"Pause-pressed.png" target:self selector:@selector(togglePause:)];
+      CCMenuItemImage *resumeButton = [CCMenuItemImage itemFromNormalImage:@"ButtonResume.png" selectedImage:@"ButtonResumePressed.png" target:self selector:@selector(resumeGame:)];
+      resumeButton.scale = 0.5;
+      CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"ButtonMainMenu.png" selectedImage:@"ButtonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
+      menuButton.scale = 0.5;
       
-      CCMenu *menu = [CCMenu menuWithItems:pauseButton, nil];
-      menu.position = ccp(winSize.width-40, 40);
-      */
+      CCMenu *pauseMenu = [CCMenu menuWithItems:resumeButton, menuButton, nil];
+      [pauseMenu alignItemsVerticallyWithPadding:20];
+      pauseMenu.position = ccp(winSize.width/2, 200);
       
       [self addChild:pauseOverlay z:Z_FOREGROUND];
+      [pauseOverlay addChild:pauseMenu z:Z_FOREGROUND];
    }
 }
 
--(void)resumeGame
+-(void)resumeGame: (id) sender
 {
    if (gamePaused) {
       
@@ -248,9 +254,12 @@
       
       [[CCDirector sharedDirector] resume];
       [self removeChild:pauseOverlay cleanup:YES];
-      
-      [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robobo_ingame_music.caf" loop:YES];
    }
+}
+
+-(void)goToMenu: (id) sender
+{
+   [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
 }
 
 #define ANIMATION_DELAY 1/30.0f
