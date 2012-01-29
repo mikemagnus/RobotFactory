@@ -84,7 +84,17 @@
        [self addChild:_topLayer z:Z_COLLISION];
        [self addChild:_bottomLayer z:Z_COLLISION];
        
-       [self scheduleUpdate];
+       // Level intro screens
+       
+       intro = [CCSprite spriteWithFile:[NSString stringWithFormat:@"Level0%d-Overlay.png", levelIndex]];
+       intro.position = ccp(winSize.width / 2, winSize.height/2);
+       [self addChild:intro z:Z_HUD];
+       
+       [self runAction:[CCSequence actions:[CCDelayTime actionWithDuration:2], [CCCallFunc actionWithTarget:self selector:@selector(scheduleUpdate)], [CCCallFunc actionWithTarget:self selector:@selector(removeIntro:)], nil]];
+       
+       // Start other stuff
+       
+       //[self scheduleUpdate];
        [self loadAnimations];
        
        /*[_topLayer addRobotToSpawnArray:kRobotColorBlue];
@@ -142,6 +152,12 @@
        
     }
     return self;
+}
+
+-(void)removeIntro: (id) sender
+{
+   intro.visible = NO;
+   //[self removeChild:intro cleanup:YES];
 }
 
 -(void)addTeslaTopPosition:(CGPoint)topPos bottomPosition:(CGPoint)botPos topActive:(BOOL)ta
