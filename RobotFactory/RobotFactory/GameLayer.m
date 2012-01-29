@@ -89,11 +89,20 @@
        [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
        [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
        
-       Obstacle* ob = [Obstacle spriteWithFile:@"GameTeslaCoil.png"];
-       ob.position = ccp(winSize.width/2,-37 + 100);
-       ob.collisionRect = ob.boundingBox;
+       Obstacle* ob = [Obstacle spriteWithSpriteFrameName:@"GameTeslaCoil1.png"];
+       ob.position = ccp(winSize.width/2,-37 + 120);
+//       ob.collisionRect = ob.boundingBox;
+       Obstacle* ob2 = [Obstacle spriteWithSpriteFrameName:@"GameTeslaCoil1.png"];
+       ob2.position = ccp(winSize.width/2,-37 + 120);
+       
+       ob.buddy = ob2;
+       ob2.buddy = ob;
+       ob.isActive = YES;
+       ob2.isActive = NO;
        [_topLayer addObstacleToCollision:ob];
        [_topLayer addChild:ob];
+       [_bottomLayer addObstacleToCollision:ob2];
+       [_bottomLayer addChild:ob2];
     }
     return self;
 }
@@ -165,9 +174,9 @@
 
 -(void)loadAnimations
 {
-   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", @"blueDeath", @"redDeath", nil];
-   int numFrames[4] = {32,32,38,38};
-   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", @"RoboBlueDeath_%02d.png", @"RoboRedDeath_%02d.png", nil];
+   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", @"blueDeath", @"redDeath",@"TeslaCoil_default", nil];
+   int numFrames[5] = {32,32,38,38,3};
+   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", @"RoboBlueDeath_%02d.png", @"RoboRedDeath_%02d.png",@"GameTeslaCoil%d.png", nil];
    
    for (int i=0; i<[files count]; i++) {
       NSString* file = [files objectAtIndex:i];
@@ -176,7 +185,10 @@
       [self addChild:spriteSheet];
       NSMutableArray *frames = [NSMutableArray array];
       for (int j=0; j<=numFrames[i]; j++) {
-         [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:[frameNames objectAtIndex:i], j]]];
+         if(i != 4)
+            [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:[frameNames objectAtIndex:i], j]]];
+         else
+            [frames addObject: [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:[NSString stringWithFormat:[frameNames objectAtIndex:i], j + 1]]];
       }
       
       CCAnimation *anim = [CCAnimation animationWithFrames:frames delay:ANIMATION_DELAY];
@@ -192,11 +204,12 @@
    CGRect rect = CGRectMake(20, 688, 60, 60);
    if (CGRectContainsPoint(rect, point)) {
       NSLog(@"Pause game here");
+      return YES;
    }
    
 //   [_topLayer spawnRobot:kRobotColorBlue];
 //   [_bottomLayer spawnRobot:kRobotColorRed];
-    return YES;
+   return NO;
 }
 
 -(void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event

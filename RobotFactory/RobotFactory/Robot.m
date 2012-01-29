@@ -60,6 +60,7 @@
 {
    //Run the death animation
    //Run in sequence to call deathFinished once complete
+   self.position = ccpAdd(position_,ccp(0.0f,10.0f));
    _isDieing = YES;
    CCAnimation* animation;
    if(_robColor == kRobotColorRed)

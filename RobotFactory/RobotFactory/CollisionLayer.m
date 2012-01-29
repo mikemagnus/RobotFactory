@@ -188,9 +188,11 @@
    CCArray* collisions = nil;
    //Static objects
    GameObject* obj;
+   CGRect r1 = [robot boundingBox];
+   r1.size = CGSizeMake(r1.size.width/2, r1.size.height);
    CCARRAY_FOREACH(_staticObjects, obj)
    {
-      if(CGRectIntersectsRect([robot boundingBox], [obj collisionRect]))
+      if(CGRectIntersectsRect(r1, [obj collisionRect]))
       {
          if(nil == collisions)
             collisions = [[CCArray alloc] initWithCapacity:3];
@@ -200,7 +202,9 @@
    Obstacle* ob;
    CCARRAY_FOREACH(_touchables, ob)
    {
-      if(CGRectIntersectsRect([robot boundingBox], [ob boundingBox]))
+      CGRect r2 = [ob boundingBox];
+      r2.size = CGSizeMake(r2.size.width/2, r2.size.height);
+      if(CGRectIntersectsRect(r1,r2) && ob.isActive)
       {
          if(nil == collisions)
             collisions = [[CCArray alloc] initWithCapacity:3];

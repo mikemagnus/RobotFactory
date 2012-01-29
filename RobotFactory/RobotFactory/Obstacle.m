@@ -12,11 +12,16 @@
 
 @implementation Obstacle
 
+@synthesize buddy = _buddy;
+@synthesize isActive = _isActive;
+
 - (id)init 
 {
    if ( (self = [super init]) ) 
    {
       _type = kGameObstacle;
+      _isActive = NO;
+      self.visible = NO;
    }
    return self;
 }
@@ -24,6 +29,36 @@
 -(void)didCollideWithRobot:(Robot*)robot
 {
    [robot runDeath];
+}
+
+-(void)setIsActive:(BOOL)isActive
+{
+   if(_isActive == isActive)
+      return;
+   _isActive = isActive;
+   CCAnimation* anim = [[CCAnimationCache sharedAnimationCache] animationByName:@"TeslaCoil_default"];
+   if(!isActive)
+   {
+      [self runAction:[CCSequence actions:[CCAnimate actionWithAnimation:anim restoreOriginalFrame:NO],[CCCallFunc actionWithTarget:self selector:@selector(doneAnim)],nil]];
+   }
+   else
+   {
+      self.visible = YES;
+      [self runAction:[CCSequence actions:[CCReverseTime actionWithAction:[CCAnimate actionWithAnimation:anim restoreOriginalFrame:NO]],[CCCallFunc actionWithTarget:self selector:@selector(doneAnim)],nil]];
+   }
+}
+
+-(void)doneAnim
+{
+   if(!_isActive)
+   {
+      [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"GameTeslaCoil4.png"]];
+      self.visible = NO;
+   }
+   else
+   {
+      [self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"GameTeslaCoil1.png"]];
+   }
 }
 
 -(void)onEnterTransitionDidFinish
@@ -35,9 +70,14 @@
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
    CGPoint tp = [self convertTouchToNodeSpace:touch];
-   if(CGRectContainsPoint([self boundingBox], tp))
+   NSLog(@"TP: %@ Rect: %@",NSStringFromCGPoint(tp),NSStringFromCGRect([self boundingBox]));
+   if(CGRectContainsPoint([self textureRect], tp))
    {
-      NSLog(@"Getting touch");
+      if(touch.tapCount == 1)
+      {
+         _buddy.isActive = self.isActive;
+         self.isActive = !self.isActive;
+      }
       return YES;
    }
    return NO;
