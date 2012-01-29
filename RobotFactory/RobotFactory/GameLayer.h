@@ -37,6 +37,8 @@
 
 -(void)update:(ccTime)dt;
 
+-(void)winGame;
+
 -(void)loadAnimations;
 
 @end

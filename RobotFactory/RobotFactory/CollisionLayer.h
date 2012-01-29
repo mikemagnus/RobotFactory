@@ -45,4 +45,8 @@
 
 -(void)update:(ccTime)dt;
 -(CCArray*)collisionsForRobot:(Robot*)robot;
+
+-(BOOL)allSameColor:(eRobotColor)color;
+-(BOOL)spawnQueueEmpty;
+
 @end

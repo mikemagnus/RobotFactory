@@ -215,4 +215,21 @@
    return collisions;
 }
 
+-(BOOL)allSameColor:(eRobotColor)color
+{
+   Robot* rob;
+   CCARRAY_FOREACH(_robots, rob)
+   {
+      if (rob.robColor != color) {
+         return NO;
+      }
+   }
+   return YES;
+}
+
+-(BOOL)spawnQueueEmpty
+{
+   return _spawnArray.count == 0;
+}
+
 @end
