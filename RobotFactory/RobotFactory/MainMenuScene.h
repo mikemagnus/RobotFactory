@@ -14,7 +14,8 @@
    BOOL creditsOpen;
    BOOL creditsMoving;
    
-   CCSprite* levelSelect;
+   CCLayer* levelSelect;
+   CCSprite* levelSelectOverlay;
    BOOL levelSelectOpen;
    BOOL levelSelectMoving;
 }

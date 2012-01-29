@@ -181,6 +181,8 @@
 		5085976814D5C2BF00046806 /* buttonResume.png in Resources */ = {isa = PBXBuildFile; fileRef = 5085975114D5C2BF00046806 /* buttonResume.png */; };
 		5085976914D5C2BF00046806 /* buttonResumePressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 5085975214D5C2BF00046806 /* buttonResumePressed.png */; };
 		5085976D14D5C80500046806 /* LevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5085976C14D5C80500046806 /* LevelSelectScene.m */; };
+		5085977714D5CF4900046806 /* mainMenuOverlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 5085977614D5CF4900046806 /* mainMenuOverlay.png */; };
+		5085977A14D5D10C00046806 /* MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 5085977914D5D10C00046806 /* MenuBackground.png */; };
 		509852F714D4013C007F5230 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 509852F614D4013C007F5230 /* GameScene.m */; };
 		50CDDFDA14D3EA4B00EC3613 /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CDDFD914D3EA4B00EC3613 /* MainMenuScene.m */; };
 		50DD92D514D4B52D006E86E4 /* blueWalk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92D314D4B52D006E86E4 /* blueWalk.plist */; };
@@ -197,7 +199,6 @@
 		50DD92FE14D4F362006E86E4 /* redDeath.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD92FC14D4F362006E86E4 /* redDeath.png */; };
 		50DD930E14D504AD006E86E4 /* Robot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DD930D14D504AD006E86E4 /* Robot.mp3 */; };
 		50DD931014D50941006E86E4 /* RobotVictory.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 50DD930F14D50941006E86E4 /* RobotVictory.mp3 */; };
-		50DD931714D50B36006E86E4 /* MenuBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD931114D50B36006E86E4 /* MenuBackground.png */; };
 		50DD931814D50B36006E86E4 /* MenuButtonCredits.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD931214D50B36006E86E4 /* MenuButtonCredits.png */; };
 		50DD931914D50B36006E86E4 /* MenuButtonCreditsPress.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD931314D50B36006E86E4 /* MenuButtonCreditsPress.png */; };
 		50DD931A14D50B36006E86E4 /* MenuButtonPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD931414D50B36006E86E4 /* MenuButtonPlay.png */; };
@@ -516,6 +517,8 @@
 		5085975214D5C2BF00046806 /* buttonResumePressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonResumePressed.png; sourceTree = "<group>"; };
 		5085976B14D5C80500046806 /* LevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelSelectScene.h; sourceTree = "<group>"; };
 		5085976C14D5C80500046806 /* LevelSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelSelectScene.m; sourceTree = "<group>"; };
+		5085977614D5CF4900046806 /* mainMenuOverlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainMenuOverlay.png; sourceTree = "<group>"; };
+		5085977914D5D10C00046806 /* MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBackground.png; sourceTree = "<group>"; };
 		509852F514D4013C007F5230 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		509852F614D4013C007F5230 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		50CDDFD814D3EA4B00EC3613 /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuScene.h; sourceTree = "<group>"; };
@@ -534,7 +537,6 @@
 		50DD92FC14D4F362006E86E4 /* redDeath.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redDeath.png; sourceTree = "<group>"; };
 		50DD930D14D504AD006E86E4 /* Robot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Robot.mp3; sourceTree = "<group>"; };
 		50DD930F14D50941006E86E4 /* RobotVictory.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = RobotVictory.mp3; sourceTree = "<group>"; };
-		50DD931114D50B36006E86E4 /* MenuBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuBackground.png; sourceTree = "<group>"; };
 		50DD931214D50B36006E86E4 /* MenuButtonCredits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuButtonCredits.png; sourceTree = "<group>"; };
 		50DD931314D50B36006E86E4 /* MenuButtonCreditsPress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuButtonCreditsPress.png; sourceTree = "<group>"; };
 		50DD931414D50B36006E86E4 /* MenuButtonPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuButtonPlay.png; sourceTree = "<group>"; };
@@ -695,6 +697,7 @@
 		27FF948014D3D35C0011C187 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5085977914D5D10C00046806 /* MenuBackground.png */,
 				5085972914D5B9FB00046806 /* RobotAnnoyingLoop.mp3 */,
 				273D517714D5AEB900922477 /* conveyor_belt_loop.caf */,
 				273D517814D5AEB900922477 /* moving_wall.caf */,
@@ -707,7 +710,6 @@
 				273D516214D5973000922477 /* GameGirder.png */,
 				273D515F14D5473500922477 /* GameGirder2.png */,
 				273D515414D50D9600922477 /* Menu */,
-				50DD931114D50B36006E86E4 /* MenuBackground.png */,
 				50DD931214D50B36006E86E4 /* MenuButtonCredits.png */,
 				50DD931314D50B36006E86E4 /* MenuButtonCreditsPress.png */,
 				50DD931414D50B36006E86E4 /* MenuButtonPlay.png */,
@@ -1073,6 +1075,7 @@
 		50DD932514D52666006E86E4 /* Overlay */ = {
 			isa = PBXGroup;
 			children = (
+				5085977614D5CF4900046806 /* mainMenuOverlay.png */,
 				50DD932714D52678006E86E4 /* Complete-Overlay.png */,
 				50DD932814D52678006E86E4 /* Level01-Overlay.png */,
 				50DD932914D52678006E86E4 /* Level02-Overlay.png */,
@@ -1162,7 +1165,6 @@
 				50DD92FE14D4F362006E86E4 /* redDeath.png in Resources */,
 				50DD930E14D504AD006E86E4 /* Robot.mp3 in Resources */,
 				50DD931014D50941006E86E4 /* RobotVictory.mp3 in Resources */,
-				50DD931714D50B36006E86E4 /* MenuBackground.png in Resources */,
 				50DD931814D50B36006E86E4 /* MenuButtonCredits.png in Resources */,
 				50DD931914D50B36006E86E4 /* MenuButtonCreditsPress.png in Resources */,
 				50DD931A14D50B36006E86E4 /* MenuButtonPlay.png in Resources */,
@@ -1221,6 +1223,8 @@
 				5085976714D5C2BF00046806 /* buttonMainMenuPressed.png in Resources */,
 				5085976814D5C2BF00046806 /* buttonResume.png in Resources */,
 				5085976914D5C2BF00046806 /* buttonResumePressed.png in Resources */,
+				5085977714D5CF4900046806 /* mainMenuOverlay.png in Resources */,
+				5085977A14D5D10C00046806 /* MenuBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
