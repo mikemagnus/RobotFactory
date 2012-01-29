@@ -85,7 +85,6 @@
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
    CGPoint tp = [self convertTouchToNodeSpace:touch];
-   NSLog(@"TP: %@ Rect: %@",NSStringFromCGPoint(tp),NSStringFromCGRect([self boundingBox]));
    if(CGRectContainsPoint([self textureRect], tp))
    {
       if(touch.tapCount == 1)

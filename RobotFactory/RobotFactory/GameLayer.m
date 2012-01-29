@@ -41,13 +41,13 @@
        [_bottomLayer setDelegate:self andSelector:@selector(startBottomSpawn)];
        _bottomLayer.rotation = 180.0f;
        
-       CCSprite* background = [CCSprite spriteWithFile:@"Level-Background01.png"];
+       CCSprite* background = [CCSprite spriteWithFile:@"Level-Backgroun01.png"];
        background.position = ccp(winSize.width / 2, winSize.height/2);
        
        GameObject* base = [GameObject spriteWithFile:@"Belt.png"];
 //       base.scaleY = 0.5f;
        
-       base.position = ccp(winSize.width / 2, winSize.height / 2);
+       base.position = ccp(winSize.width / 2, winSize.height / 2 - 1);
 
        base.collisionRect = [base boundingBox];
        
