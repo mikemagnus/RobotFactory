@@ -316,9 +316,9 @@
    
    [self addChild:winOverlay z:Z_FOREGROUND];
    
-   CCMenuItemImage *continueButton = [CCMenuItemImage itemFromNormalImage:@"ButtonContinue.png" selectedImage:@"ButtonContinuePressed.png" target:self selector:@selector(nextLevel:)];
+   CCMenuItemImage *continueButton = [CCMenuItemImage itemFromNormalImage:@"buttonContinue.png" selectedImage:@"buttonContinuePressed.png" target:self selector:@selector(nextLevel:)];
    continueButton.scale = 0.5;
-   CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"ButtonMainMenu.png" selectedImage:@"ButtonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
+   CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
    menuButton.scale = 0.5;
    
    CCMenu *winMenu = [CCMenu menuWithItems:continueButton, menuButton, nil];
@@ -343,9 +343,9 @@
       pauseOverlay.position = ccp(winSize.width/2, winSize.height/2);
       
       
-      CCMenuItemImage *resumeButton = [CCMenuItemImage itemFromNormalImage:@"ButtonResume.png" selectedImage:@"ButtonResumePressed.png" target:self selector:@selector(resumeGame:)];
+      CCMenuItemImage *resumeButton = [CCMenuItemImage itemFromNormalImage:@"buttonResume.png" selectedImage:@"buttonResumePressed.png" target:self selector:@selector(resumeGame:)];
       resumeButton.scale = 0.5;
-      CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"ButtonMainMenu.png" selectedImage:@"ButtonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
+      CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenuPressed.png" target:self selector:@selector(goToMenu:)];
       menuButton.scale = 0.5;
       
       CCMenu *pauseMenu = [CCMenu menuWithItems:resumeButton, menuButton, nil];
