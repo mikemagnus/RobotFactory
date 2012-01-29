@@ -213,24 +213,26 @@
       gamePaused = YES;
       pauseButton.visible = NO;
       
-      [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
       [[CCDirector sharedDirector] pause];
+      
       CGSize winSize = [[CCDirector sharedDirector] winSize];
+      
       pauseOverlay = [CCSprite spriteWithFile:@"Paused-overlay.png"];
       pauseOverlay.position = ccp(winSize.width/2, winSize.height/2);
       
       
-      /*CCMenuItemImage *pauseButton = [CCMenuItemImage itemFromNormalImage:@"Pause-static.png" selectedImage:@"Pause-pressed.png" target:self selector:@selector(togglePause:)];
+      CCMenuItemImage *menuButton = [CCMenuItemImage itemFromNormalImage:@"MenuButtonPlay.png" selectedImage:@"MenuButtonPlayPress.png" target:self selector:@selector(resumeGame:)];
       
-      CCMenu *menu = [CCMenu menuWithItems:pauseButton, nil];
-      menu.position = ccp(winSize.width-40, 40);
-      */
+      CCMenu *pauseMenu = [CCMenu menuWithItems:menuButton, nil];
+      [pauseMenu alignItemsVerticallyWithPadding:10];
+      pauseMenu.position = ccp(winSize.width/2, 500);
       
       [self addChild:pauseOverlay z:Z_FOREGROUND];
+      [pauseOverlay addChild:pauseMenu z:Z_FOREGROUND];
    }
 }
 
--(void)resumeGame
+-(void)resumeGame: (id) sender
 {
    if (gamePaused) {
       
@@ -239,8 +241,6 @@
       
       [[CCDirector sharedDirector] resume];
       [self removeChild:pauseOverlay cleanup:YES];
-      
-      [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robobo_ingame_music.caf" loop:YES];
    }
 }
 
