@@ -211,14 +211,17 @@
          [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98) topActive:YES];
          [self addWallTopPosition:ccp(350,98) bottomPosition:ccp(674,98) topActive:NO];
          [self addWallTopPosition:ccp(674,98) bottomPosition:ccp(350,98) topActive:YES];
-         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
          [_topLayer addRobotToSpawnArray:kRobotColorRed];
+         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
          [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
          break;
       case 3:
          [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98) topActive:YES];
          [_topLayer addRobotToSpawnArray:kRobotColorRed];
+         [_topLayer addRobotToSpawnArray:kRobotColorRed];
          [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
          [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
          [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
          break;
