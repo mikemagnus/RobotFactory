@@ -30,6 +30,7 @@
    
    BOOL gamePaused;
    CCSprite* pauseOverlay;
+   CCSprite* intro;
    CCMenuItemImage *pauseButton;
    
    int levelIndex;
