@@ -11,7 +11,6 @@
 #import "CCDirector.h"
 #import "SimpleAudioEngine.h"
 #import "GameLayer.h"
-#import "HelloWorldLayer.h"
 
 @implementation MainMenuScene
 
