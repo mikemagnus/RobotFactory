@@ -10,7 +10,7 @@
 #import "cocos2d.h"
 #import "GameObject.h"
 
-@interface Obstacle : GameObject 
+@interface Obstacle : GameObject <CCTargetedTouchDelegate>
 {
     
 }
