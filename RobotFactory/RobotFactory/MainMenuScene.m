@@ -36,8 +36,8 @@
       CCLayer *menuLayer = [[CCLayer alloc] init];
       [self addChild:menuLayer];
       
-      CCMenuItemImage *startButton = [CCMenuItemImage itemFromNormalImage:@"Play-static.png" selectedImage:@"Play-pressed.png" target:self selector:@selector(onPlay:)];
-      CCMenuItemImage *creditsButton = [CCMenuItemImage itemFromNormalImage:@"Credits-static.png" selectedImage:@"Credits-pressed.png" target:self selector:@selector(onAbout:)];
+      CCMenuItemImage *startButton = [CCMenuItemImage itemFromNormalImage:@"Play-static.png" selectedImage:@"Play-pressed.png" target:self selector:@selector(startGame:)];
+      CCMenuItemImage *creditsButton = [CCMenuItemImage itemFromNormalImage:@"Credits-static.png" selectedImage:@"Credits-pressed.png" target:self selector:@selector(viewCredits:)];
       
       CCMenu *menu = [CCMenu menuWithItems:startButton, creditsButton, nil];
       [menu alignItemsVerticallyWithPadding:20];
@@ -51,12 +51,13 @@
    return self;
 }
 
--(void) onPlay: (id) sender
+-(void) startGame: (id) sender
 {
+   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
    [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
 }
 
--(void) onAbout: (id) sender
+-(void) viewCredits: (id) sender
 {
    [[CCDirector sharedDirector] replaceScene:[HelloWorldLayer scene]];
 }
