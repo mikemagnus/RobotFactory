@@ -162,6 +162,13 @@
 		50DD931A14D50B36006E86E4 /* MenuButtonPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD931414D50B36006E86E4 /* MenuButtonPlay.png */; };
 		50DD931B14D50B36006E86E4 /* MenuButtonPlayPress.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD931514D50B36006E86E4 /* MenuButtonPlayPress.png */; };
 		50DD931C14D50B36006E86E4 /* MenuCredits.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD931614D50B36006E86E4 /* MenuCredits.png */; };
+		50DD932E14D52678006E86E4 /* Complete-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD932714D52678006E86E4 /* Complete-Overlay.png */; };
+		50DD932F14D52678006E86E4 /* Level01-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD932814D52678006E86E4 /* Level01-Overlay.png */; };
+		50DD933014D52678006E86E4 /* Level02-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD932914D52678006E86E4 /* Level02-Overlay.png */; };
+		50DD933114D52678006E86E4 /* Level03-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD932A14D52678006E86E4 /* Level03-Overlay.png */; };
+		50DD933214D52678006E86E4 /* Level04-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD932B14D52678006E86E4 /* Level04-Overlay.png */; };
+		50DD933314D52678006E86E4 /* Level05-Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD932C14D52678006E86E4 /* Level05-Overlay.png */; };
+		50DD933414D52678006E86E4 /* Paused-overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD932D14D52678006E86E4 /* Paused-overlay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -449,6 +456,13 @@
 		50DD931414D50B36006E86E4 /* MenuButtonPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuButtonPlay.png; sourceTree = "<group>"; };
 		50DD931514D50B36006E86E4 /* MenuButtonPlayPress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuButtonPlayPress.png; sourceTree = "<group>"; };
 		50DD931614D50B36006E86E4 /* MenuCredits.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuCredits.png; sourceTree = "<group>"; };
+		50DD932714D52678006E86E4 /* Complete-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Complete-Overlay.png"; sourceTree = "<group>"; };
+		50DD932814D52678006E86E4 /* Level01-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level01-Overlay.png"; sourceTree = "<group>"; };
+		50DD932914D52678006E86E4 /* Level02-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level02-Overlay.png"; sourceTree = "<group>"; };
+		50DD932A14D52678006E86E4 /* Level03-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level03-Overlay.png"; sourceTree = "<group>"; };
+		50DD932B14D52678006E86E4 /* Level04-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level04-Overlay.png"; sourceTree = "<group>"; };
+		50DD932C14D52678006E86E4 /* Level05-Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Level05-Overlay.png"; sourceTree = "<group>"; };
+		50DD932D14D52678006E86E4 /* Paused-overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Paused-overlay.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -566,6 +580,7 @@
 		27FF948014D3D35C0011C187 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50DD932514D52666006E86E4 /* Overlay */,
 				273D515414D50D9600922477 /* Menu */,
 				50DD931114D50B36006E86E4 /* MenuBackground.png */,
 				50DD931214D50B36006E86E4 /* MenuButtonCredits.png */,
@@ -928,6 +943,20 @@
 			name = Nodes;
 			sourceTree = "<group>";
 		};
+		50DD932514D52666006E86E4 /* Overlay */ = {
+			isa = PBXGroup;
+			children = (
+				50DD932714D52678006E86E4 /* Complete-Overlay.png */,
+				50DD932814D52678006E86E4 /* Level01-Overlay.png */,
+				50DD932914D52678006E86E4 /* Level02-Overlay.png */,
+				50DD932A14D52678006E86E4 /* Level03-Overlay.png */,
+				50DD932B14D52678006E86E4 /* Level04-Overlay.png */,
+				50DD932C14D52678006E86E4 /* Level05-Overlay.png */,
+				50DD932D14D52678006E86E4 /* Paused-overlay.png */,
+			);
+			name = Overlay;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1019,6 +1048,13 @@
 				273D515014D50D6000922477 /* GameButtonTeslaCoil.png in Resources */,
 				273D515114D50D6000922477 /* GameButtonTeslaCoilButtonPress.png in Resources */,
 				273D515214D50D6000922477 /* GameTeslaCoil.png in Resources */,
+				50DD932E14D52678006E86E4 /* Complete-Overlay.png in Resources */,
+				50DD932F14D52678006E86E4 /* Level01-Overlay.png in Resources */,
+				50DD933014D52678006E86E4 /* Level02-Overlay.png in Resources */,
+				50DD933114D52678006E86E4 /* Level03-Overlay.png in Resources */,
+				50DD933214D52678006E86E4 /* Level04-Overlay.png in Resources */,
+				50DD933314D52678006E86E4 /* Level05-Overlay.png in Resources */,
+				50DD933414D52678006E86E4 /* Paused-overlay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

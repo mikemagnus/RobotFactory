@@ -6,6 +6,7 @@
 //  Copyright 2012 __MyCompanyName__. All rights reserved.
 //
 
+#import "SimpleAudioEngine.h"
 #import "GameLayer.h"
 #import "GameObject.h"
 #import "Obstacle.h"
@@ -94,6 +95,19 @@
        ob.collisionRect = ob.boundingBox;
        [_topLayer addObstacleToCollision:ob];
        [_topLayer addChild:ob];
+       
+       
+       //Pause button
+       
+       gamePaused = NO;
+       
+       CCMenuItemImage *pauseButton = [CCMenuItemImage itemFromNormalImage:@"Pause-static.png" selectedImage:@"Pause-pressed.png" target:self selector:@selector(togglePause:)];
+       
+       CCMenu *menu = [CCMenu menuWithItems:pauseButton, nil];
+       menu.position = ccp(winSize.width-40, 40);
+       
+       [self addChild:menu z:Z_FOREGROUND];
+       
     }
     return self;
 }
@@ -159,6 +173,23 @@
 {
    [_topLayer update:dt];
    [_bottomLayer update:dt];
+}
+
+-(void)togglePause: (id) sender
+{
+   if (gamePaused) {
+      gamePaused = NO;
+      [[CCDirector sharedDirector] resume];
+      [self removeChild:pauseOverlay cleanup:YES];
+   } else {
+      gamePaused = YES;
+      [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
+      [[CCDirector sharedDirector] pause];
+      CGSize winSize = [[CCDirector sharedDirector] winSize];
+      pauseOverlay = [CCSprite spriteWithFile:@"Paused-overlay.png"];
+      pauseOverlay.position = ccp(winSize.width/2, winSize.height/2);
+      [self addChild:pauseOverlay z:Z_FOREGROUND];
+   }
 }
 
 #define ANIMATION_DELAY 1/30.0f
