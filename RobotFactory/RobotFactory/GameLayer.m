@@ -243,6 +243,25 @@
          [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
          [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
          break;
+      case 4:
+         [self addTeslaTopPosition:ccp(400,98) bottomPosition:ccp(624,98) topActive:NO];
+         [self addTeslaTopPosition:ccp(624,98) bottomPosition:ccp(400,98) topActive:YES];
+         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_topLayer addRobotToSpawnArray:kRobotColorRed];
+         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
+         break;
+      case 5:
+         [self addWallTopPosition:ccp(506,98) bottomPosition:ccp(518,98) topActive:YES];
+         [self addTeslaTopPosition:ccp(350,98) bottomPosition:ccp(674,98) topActive:NO];
+         [self addTeslaTopPosition:ccp(674,98) bottomPosition:ccp(350,98) topActive:YES];
+         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_topLayer addRobotToSpawnArray:kRobotColorRed];
+         [_topLayer addRobotToSpawnArray:kRobotColorBlue];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
+         [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
+         break;
       default:
          break;
    }
