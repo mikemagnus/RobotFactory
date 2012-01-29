@@ -101,7 +101,7 @@
        
        gamePaused = NO;
        
-       CCMenuItemImage *pauseButton = [CCMenuItemImage itemFromNormalImage:@"Pause-static.png" selectedImage:@"Pause-pressed.png" target:self selector:@selector(togglePause:)];
+       pauseButton = [CCMenuItemImage itemFromNormalImage:@"Pause-static.png" selectedImage:@"Pause-pressed.png" target:self selector:@selector(pauseGame:)];
        
        CCMenu *menu = [CCMenu menuWithItems:pauseButton, nil];
        menu.position = ccp(winSize.width-40, 40);
@@ -175,20 +175,39 @@
    [_bottomLayer update:dt];
 }
 
--(void)togglePause: (id) sender
+-(void)pauseGame: (id) sender
 {
-   if (gamePaused) {
-      gamePaused = NO;
-      [[CCDirector sharedDirector] resume];
-      [self removeChild:pauseOverlay cleanup:YES];
-   } else {
+   if (!gamePaused) {
+      
       gamePaused = YES;
+      pauseButton.visible = NO;
+      
       [[SimpleAudioEngine sharedEngine] pauseBackgroundMusic];
       [[CCDirector sharedDirector] pause];
       CGSize winSize = [[CCDirector sharedDirector] winSize];
       pauseOverlay = [CCSprite spriteWithFile:@"Paused-overlay.png"];
       pauseOverlay.position = ccp(winSize.width/2, winSize.height/2);
+      
+      
+      /*CCMenuItemImage *pauseButton = [CCMenuItemImage itemFromNormalImage:@"Pause-static.png" selectedImage:@"Pause-pressed.png" target:self selector:@selector(togglePause:)];
+      
+      CCMenu *menu = [CCMenu menuWithItems:pauseButton, nil];
+      menu.position = ccp(winSize.width-40, 40);
+      */
+      
       [self addChild:pauseOverlay z:Z_FOREGROUND];
+   }
+}
+
+-(void)resumeGame
+{
+   if (gamePaused) {
+      
+      gamePaused = NO;
+      pauseButton.visible = TRUE;
+      
+      [[CCDirector sharedDirector] resume];
+      [self removeChild:pauseOverlay cleanup:YES];
    }
 }
 
@@ -219,11 +238,6 @@
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-   CGPoint point = [touch locationInView:[touch view]];
-   CGRect rect = CGRectMake(20, 688, 60, 60);
-   if (CGRectContainsPoint(rect, point)) {
-      NSLog(@"Pause game here");
-   }
    
 //   [_topLayer spawnRobot:kRobotColorBlue];
 //   [_bottomLayer spawnRobot:kRobotColorRed];

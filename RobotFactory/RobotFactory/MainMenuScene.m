@@ -28,6 +28,7 @@
    if ((self = [super init])) {
       
       [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robot.mp3" loop:YES];
+      [[CDAudioManager sharedManager] setResignBehavior:kAMRBStopPlay autoHandle:YES];
       
       CGSize winSize = [[CCDirector sharedDirector] winSize];
       

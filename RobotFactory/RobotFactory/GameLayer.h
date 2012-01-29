@@ -30,6 +30,7 @@
    
    BOOL gamePaused;
    CCSprite* pauseOverlay;
+   CCMenuItemImage *pauseButton;
 }
 
 +(id) scene;
