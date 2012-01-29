@@ -12,6 +12,8 @@
 #import "Robot.h"
 #import "Obstacle.h"
 
+#import "SimpleAudioEngine.h"
+
 
 @implementation CollisionLayer
 
@@ -91,6 +93,7 @@
    [self addChild:rob z:0];
    [rob setDelegate:self.parent];
    [_spawnArray removeObjectAtIndex:0];
+   [[SimpleAudioEngine sharedEngine] playEffect:@"robot_egg_hatch.caf" pitch:1 pan:1 gain:0.15];
 }
 
 -(void)spawnerFinished

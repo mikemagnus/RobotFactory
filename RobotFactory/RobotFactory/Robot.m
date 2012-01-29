@@ -8,7 +8,7 @@
 
 #import "Robot.h"
 #import "RobotDelegate.h"
-
+#import "SimpleAudioEngine.h"
 
 @implementation Robot
 
@@ -60,6 +60,7 @@
 {
    //Run the death animation
    //Run in sequence to call deathFinished once complete
+   [[SimpleAudioEngine sharedEngine] playEffect:@"robot_die.caf" pitch:1 pan:1 gain:0.04];
    self.position = ccpAdd(position_,ccp(0.0f,10.0f));
    _isDieing = YES;
    CCAnimation* animation;
