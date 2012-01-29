@@ -76,6 +76,20 @@
    [self runAction:[CCFadeOut actionWithDuration:1.0f]];
 }
 
+-(void)runWin
+{
+   CCAnimation* animation;
+   if(_robColor == kRobotColorRed)
+   {
+      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"roboredWin"];
+   }
+   else if(_robColor == kRobotColorBlue)
+   {
+      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"roboblueWin"];
+   }
+   [self runAction:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]];
+}
+
 -(void)deathFinished
 {
    //Fade/remove

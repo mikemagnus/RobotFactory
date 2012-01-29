@@ -248,9 +248,9 @@
 
 -(void)loadAnimations
 {
-   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", @"blueDeath", @"redDeath",@"TeslaCoil_default", nil];
-   int numFrames[5] = {32,32,38,38,3};
-   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", @"RoboBlueDeath_%02d.png", @"RoboRedDeath_%02d.png",@"GameTeslaCoil%d.png", nil];
+   NSArray* files = [NSArray arrayWithObjects:@"blueWalk", @"redWalk", @"blueDeath", @"redDeath",@"TeslaCoil_default",@"roboredWin", nil];
+   int numFrames[6] = {32,32,38,38,3,40};
+   NSArray* frameNames = [NSArray arrayWithObjects:@"RoboBlue_000%02d.png", @"RoboRed_000%02d_1.png", @"RoboBlueDeath_%02d.png", @"RoboRedDeath_%02d.png",@"GameTeslaCoil%d.png",@"RoboRedWin_%02d.png", nil];
    
    for (int i=0; i<[files count]; i++) {
       NSString* file = [files objectAtIndex:i];

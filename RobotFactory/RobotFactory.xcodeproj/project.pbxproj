@@ -35,6 +35,8 @@
 		273D518214D5AEBA00922477 /* robot_egg_hatch.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517B14D5AEBA00922477 /* robot_egg_hatch.caf */; };
 		273D518314D5AEBA00922477 /* robot_gui_menu.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517C14D5AEBA00922477 /* robot_gui_menu.caf */; };
 		273D518414D5AEBA00922477 /* robot_hit.caf in Resources */ = {isa = PBXBuildFile; fileRef = 273D517D14D5AEBA00922477 /* robot_hit.caf */; };
+		273D518B14D5BBB800922477 /* roboredWin.png in Resources */ = {isa = PBXBuildFile; fileRef = 273D518914D5BBB800922477 /* roboredWin.png */; };
+		273D518C14D5BBB800922477 /* roboredWin.plist in Resources */ = {isa = PBXBuildFile; fileRef = 273D518A14D5BBB800922477 /* roboredWin.plist */; };
 		27FF947014D3D35C0011C187 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF946F14D3D35C0011C187 /* QuartzCore.framework */; };
 		27FF947214D3D35C0011C187 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947114D3D35C0011C187 /* OpenGLES.framework */; };
 		27FF947414D3D35C0011C187 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FF947314D3D35C0011C187 /* OpenAL.framework */; };
@@ -218,6 +220,8 @@
 		273D517B14D5AEBA00922477 /* robot_egg_hatch.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_egg_hatch.caf; sourceTree = "<group>"; };
 		273D517C14D5AEBA00922477 /* robot_gui_menu.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_gui_menu.caf; sourceTree = "<group>"; };
 		273D517D14D5AEBA00922477 /* robot_hit.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = robot_hit.caf; sourceTree = "<group>"; };
+		273D518914D5BBB800922477 /* roboredWin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = roboredWin.png; sourceTree = "<group>"; };
+		273D518A14D5BBB800922477 /* roboredWin.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = roboredWin.plist; sourceTree = "<group>"; };
 		27FF946B14D3D35C0011C187 /* RobotFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobotFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27FF946F14D3D35C0011C187 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		27FF947114D3D35C0011C187 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -515,6 +519,8 @@
 		273D510214D44C1A00922477 /* Gameplay */ = {
 			isa = PBXGroup;
 			children = (
+				273D518914D5BBB800922477 /* roboredWin.png */,
+				273D518A14D5BBB800922477 /* roboredWin.plist */,
 				273D517514D5A8B400922477 /* Belt.png */,
 				273D516C14D5A0E600922477 /* Level-Backgroun01.png */,
 				273D516D14D5A0E800922477 /* Level-Backgroun02.png */,
@@ -1111,6 +1117,8 @@
 				273D518314D5AEBA00922477 /* robot_gui_menu.caf in Resources */,
 				273D518414D5AEBA00922477 /* robot_hit.caf in Resources */,
 				5085972A14D5B9FB00046806 /* RobotAnnoyingLoop.mp3 in Resources */,
+				273D518B14D5BBB800922477 /* roboredWin.png in Resources */,
+				273D518C14D5BBB800922477 /* roboredWin.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
