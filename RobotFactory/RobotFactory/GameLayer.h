@@ -35,6 +35,8 @@
 
 +(id) scene;
 
+-(id)initWithIndex:(int)level;
+
 -(void)update:(ccTime)dt;
 
 -(void)winGame;

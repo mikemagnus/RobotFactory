@@ -24,7 +24,7 @@
    return scene;
 }
 
-- (id)init
+- (id)initWithIndex:(int)level
 {
     if ( (self = [super init]) ) 
     {
