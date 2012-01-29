@@ -44,6 +44,7 @@ typedef enum RobotColor
 
 -(void)runWalk;
 -(void)runDeath;
+-(void)runWin;
 
 -(void)deathFinished;
 

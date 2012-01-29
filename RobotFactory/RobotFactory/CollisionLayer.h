@@ -42,6 +42,7 @@
 -(void)spawnRobot:(eRobotColor)color;
 -(void)spawnRobot;
 -(void)removeRobot:(Robot*)robot;
+-(void)winGame;
 
 -(void)update:(ccTime)dt;
 -(CCArray*)collisionsForRobot:(Robot*)robot;

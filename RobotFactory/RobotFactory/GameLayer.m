@@ -194,6 +194,9 @@
 {
    [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
    
+   [_topLayer winGame];
+   [_bottomLayer winGame];
+   
    pauseButton.visible = NO;
    [self unscheduleUpdate];
       
