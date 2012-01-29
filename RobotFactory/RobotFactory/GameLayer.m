@@ -275,7 +275,6 @@
 
 -(void)winGame
 {
-
    
    pauseButton.visible = NO;
 //   [self unscheduleUpdate];

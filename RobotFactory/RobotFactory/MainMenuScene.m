@@ -82,12 +82,6 @@
    return self;
 }
 
--(void) startGame: (id) sender
-{
-   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
-   [[CCDirector sharedDirector] replaceScene:[GameLayer scene]];
-}
-
 -(void) toggleCredits: (id) sender
 {
    if (!creditsMoving) {
@@ -148,22 +142,26 @@
 
 -(void) goToLevel2: (id) sender
 {
-   NSLog(@"Going to level 2");
+   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+   [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:2]];
 }
 
 -(void) goToLevel3: (id) sender
 {
-   NSLog(@"Going to level 3");
+   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+   [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:3]];
 }
 
 -(void) goToLevel4: (id) sender
 {
-   NSLog(@"Going to level 4");
+   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+   [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:4]];
 }
 
 -(void) goToLevel5: (id) sender
 {
-   NSLog(@"Going to level 5");
+   [[SimpleAudioEngine sharedEngine] stopBackgroundMusic];
+   [[CCDirector sharedDirector] replaceScene:[GameLayer sceneWithIndex:5]];
 }
 
 -(void) dealloc
