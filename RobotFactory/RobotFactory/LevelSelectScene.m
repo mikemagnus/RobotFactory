@@ -7,6 +7,7 @@
 //
 
 #import "LevelSelectScene.h"
+#import "SimpleAudioEngine.h"
 
 @implementation LevelSelectScene
 
@@ -22,7 +23,23 @@
 {
    if ((self = [super init])) {
       
+      [[SimpleAudioEngine sharedEngine] playBackgroundMusic:@"Robot.mp3" loop:YES];
+      
+      CGSize winSize = [[CCDirector sharedDirector] winSize];
+      
+      CCSprite* background = [CCSprite spriteWithFile:@"MenuBackground.png"];
+      background.position = ccp(winSize.width / 2, winSize.height/2);
+      
+      CCMenuItemImage* menuButton = [CCMenuItemImage itemFromNormalImage:@"buttonMainMenu.png" selectedImage:@"buttonMainMenuPressed.png" target:self selector:@selector(menuButton:)];
+      
+      CCMenu *menu = [CCMenu menuWithItems:menuButton, nil];
+      menu.position = ccp(winSize.width/2, winSize.height/2);
+      [menu alignItemsVerticallyWithPadding:10];
+      
+      [self addChild:menu];
+      
    }
+   return self;
 }
 
 @end

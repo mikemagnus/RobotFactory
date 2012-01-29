@@ -11,6 +11,7 @@
 #import "GameObject.h"
 #import "Obstacle.h"
 #import "MainMenuScene.h"
+#import "LevelSelectScene.h"
 
 @implementation GameLayer
 
@@ -253,6 +254,8 @@
 
 -(void)goToMenu: (id) sender
 {
+   [[CCDirector sharedDirector] resume];
+   gamePaused = NO;
    [[CCDirector sharedDirector] replaceScene:[MainMenuScene scene]];
 }
 

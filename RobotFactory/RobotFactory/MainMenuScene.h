@@ -13,6 +13,10 @@
    CCSprite* credits;
    BOOL creditsOpen;
    BOOL creditsMoving;
+   
+   CCSprite* levelSelect;
+   BOOL levelSelectOpen;
+   BOOL levelSelectMoving;
 }
 
 +(id) scene;
