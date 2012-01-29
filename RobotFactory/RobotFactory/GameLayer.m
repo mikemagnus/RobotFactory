@@ -191,6 +191,8 @@
          [_bottomLayer addRobotToSpawnArray:kRobotColorRed];
          break;
       case 2:
+         [self addTeslaTopPosition:ccp(506,98) bottomPosition:ccp(518,98)];
+         [self addWallTopPosition:ccp(350,98) bottomPosition:ccp(724,98)];
          break;
       case 3:
          break;
