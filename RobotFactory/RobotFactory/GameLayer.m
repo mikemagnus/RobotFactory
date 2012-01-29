@@ -46,7 +46,9 @@
        [_bottomLayer setDelegate:self andSelector:@selector(startBottomSpawn)];
        _bottomLayer.rotation = 180.0f;
        
-       CCSprite* background = [CCSprite spriteWithFile:[NSString stringWithFormat:@"Level-Backgroun0%d.png",level]];
+       arc4random_stir();
+       int rand = arc4random() % 3;
+       CCSprite* background = [CCSprite spriteWithFile:[NSString stringWithFormat:@"Level-Backgroun0%d.png",rand+1]];
        background.position = ccp(winSize.width / 2, winSize.height/2);
        
        GameObject* base = [GameObject spriteWithFile:@"Belt.png"];
