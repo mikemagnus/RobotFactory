@@ -16,12 +16,22 @@
 @synthesize collision = _collision;
 @synthesize robColor = _robColor;
 
-- (id)init
+- (id)initWithRobotColor:(eRobotColor)color
 {
-   if ( (self = [super init]) ) 
+   NSString* file;
+   if(color == kRobotColorRed)
+   {
+      file = @"RoboRed_00000_1.png";
+   }
+   else
+   {
+      file = @"RoboBlue_00000.png";
+   }
+   if ( (self = [super initWithSpriteFrameName:file]) ) 
    {
       _velocity = CGPointZero;
-//      self.scale = 0.5f;
+      _robColor = color;
+      _type = kGameRobot;
    }
    return self;
 }
@@ -47,12 +57,13 @@
 
 -(void)runDeath
 {
-   
+   //Run the death animation
+   //Run in sequence to call deathFinished once complete
 }
 
 -(void)deathFinished
 {
-   
+   //Trigger Cleanup Animation
 }
 
 -(void)update:(ccTime)dt

@@ -33,6 +33,8 @@ typedef enum RobotColor
 @property(nonatomic)GameObject* collision;
 @property(nonatomic)eRobotColor robColor;
 
+-(id)initWithRobotColor:(eRobotColor)color;
+
 -(void)update:(ccTime)dt;
 
 -(void)setDelegate:(id<RobotDelegate>)delegate;

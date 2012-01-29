@@ -24,7 +24,6 @@
 -(void)didCollideWithRobot:(Robot*)robot
 {
    [robot runDeath];
-   
 }
 
 -(void)onEnterTransitionDidFinish
@@ -35,6 +34,7 @@
 
 -(BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+   NSLog(@"Getting touch");
    return NO;
 }
 

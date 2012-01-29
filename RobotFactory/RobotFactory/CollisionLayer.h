@@ -23,11 +23,22 @@
    CGPoint _spawnPoint;
    
    CGPoint _gravity;
+   
+   BOOL _spawning;
+   
+   id _delegate;
+   SEL _startSpawnSel;
 }
 
+@property(nonatomic)BOOL spawning;
+
+-(void)setDelegate:(id)delegate andSelector:(SEL)spawnSel;
+
 -(void)addGameObjectToCollision:(GameObject*)collision;
+-(void)cleanupRobotDeath:(Robot*)robot;
 -(void)addRobotToSpawnArray:(eRobotColor)color;
 -(void)spawnRobot:(eRobotColor)color;
+-(void)spawnRobot;
 
 -(void)update:(ccTime)dt;
 -(CCArray*)collisionsForRobot:(Robot*)robot;

@@ -15,6 +15,8 @@
 
 @implementation CollisionLayer
 
+@synthesize spawning = _spawning;
+
 -(id)init
 {
    if( (self = [super init]) )
@@ -25,7 +27,7 @@
       _staticObjects = [[CCArray alloc] initWithCapacity:10];
       _spawnArray = [[CCArray alloc] initWithCapacity:5];
       
-      _spawnPoint = ccp(winSize.width - 80,300);
+      _spawnPoint = ccp(winSize.width - 80,-37 + 100);
       
       GameObject* conveyorBelt = [GameObject node];
       conveyorBelt.collisionRect = CGRectMake(0.0f, -37.0f, 1024, 50.0f);
@@ -35,9 +37,20 @@
    return self;
 }
 
+-(void)setDelegate:(id)delegate andSelector:(SEL)spawnSel
+{
+   _delegate = delegate;
+   _startSpawnSel = spawnSel;
+}
+
 -(void)addGameObjectToCollision:(GameObject *)collision
 {
    [_staticObjects addObject:collision];
+}
+
+-(void)addObstacleAtPosition:(CGPoint)point
+{
+   
 }
 
 -(void)robotDied:(Robot *)robot
@@ -45,30 +58,50 @@
    
 }
 
+-(void)addRobotToSpawnArray:(eRobotColor)color
+{
+   [_spawnArray addObject:[[[Robot alloc] initWithRobotColor:color] autorelease]];
+}
+
 -(void)spawnRobot:(eRobotColor)color
 {
-   Robot* rob;
-   if (color == kRobotColorBlue) {
-      rob = [Robot spriteWithSpriteFrameName:@"RoboBlue_00000.png"];
-      rob.robColor = color;
-      [rob runWalk];
-   } else {
-      rob = [Robot spriteWithSpriteFrameName:@"RoboRed_00000_1.png"];
-      rob.robColor = color;
-      [rob runWalk];
-   }
+   Robot* rob = [[[Robot alloc] initWithRobotColor:color] autorelease];
+//   Robot* rob = [_spawnArray objectAtIndex:0];
+//   [_spawnArray removeObjectAtIndex:0];
+   [rob runWalk];
    rob.position = _spawnPoint;
-   
-   
    [rob setFlipX:YES];
    [_robots addObject:rob];
    [self addChild:rob];
+   
+}
+
+-(void)spawnRobot
+{
+   Robot* rob = [_spawnArray objectAtIndex:0];
+   rob.position = _spawnPoint;
+   [rob setFlipX:YES];
+   [rob runWalk];
+   [_robots addObject:rob];
+   [self addChild:rob];
+   [_spawnArray removeObjectAtIndex:0];
+}
+
+-(void)spawnerFinished
+{
+   
 }
 
 #define kGravity 40.0f
 
 -(void)update:(ccTime)dt
 {
+   if(!_spawning && [_spawnArray count] > 0)
+   {
+      _spawning = YES;
+      [_delegate performSelector:_startSpawnSel];
+   }
+   
    Robot* rob;
    CCARRAY_FOREACH(_robots, rob)
    {
