@@ -101,6 +101,15 @@
    
 }
 
+-(void)winGame
+{
+   Robot* rob;
+   CCARRAY_FOREACH(_robots, rob)
+   {
+      [rob runWin];
+   }
+}
+
 #define kGravity 40.0f
 
 -(void)update:(ccTime)dt
