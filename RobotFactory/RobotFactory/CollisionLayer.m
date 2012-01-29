@@ -23,6 +23,7 @@
       _robots = [[CCArray alloc] initWithCapacity:6];
       _touchables = [[CCArray alloc] initWithCapacity:10];
       _staticObjects = [[CCArray alloc] initWithCapacity:10];
+      _spawnArray = [[CCArray alloc] initWithCapacity:5];
       
       _spawnPoint = ccp(winSize.width - 80,300);
       
@@ -39,20 +40,25 @@
    [_staticObjects addObject:collision];
 }
 
+-(void)robotDied:(Robot *)robot
+{
+   
+}
+
 -(void)spawnRobot:(eRobotColor)color
 {
    Robot* rob;
-   id animation;
    if (color == kRobotColorBlue) {
       rob = [Robot spriteWithSpriteFrameName:@"RoboBlue_00000.png"];
-      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"blueWalk"];
+      rob.robColor = color;
+      [rob runWalk];
    } else {
       rob = [Robot spriteWithSpriteFrameName:@"RoboRed_00000_1.png"];
-      animation = [[CCAnimationCache sharedAnimationCache] animationByName:@"redWalk"];
+      rob.robColor = color;
+      [rob runWalk];
    }
    rob.position = _spawnPoint;
    
-   [rob runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO]]];
    
    [rob setFlipX:YES];
    [_robots addObject:rob];
